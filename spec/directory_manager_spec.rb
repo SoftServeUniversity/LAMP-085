@@ -7,14 +7,13 @@ RSpec.configure do |config|
 end
 
 describe DirectoryManager do
-	describe '#get_archives' do
-		before(:each) do
+  describe '#get_archives' do
+    before(:each) do
       @object = DirectoryManager.new("LAMP-085/support/")
-		end
-		it 'return names of work directory archive files' do
+    end
+    it 'return names of work directory archive files' do
       @object.get_archives
-			@object.instance_variable_get(:@arch).should have(6).items
-		end
-
-	end
+      @object.instance_variable_get(:@arch).should have(6).items
+    end
+  end
 end
