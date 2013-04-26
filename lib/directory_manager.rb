@@ -4,7 +4,7 @@ require 'rubygems'
 class DirectoryManager
 	UNARCHIVE_TYPES = {'.7z' => "", '.zip' => ""}
 
-	def initialize(path = "my_folder")
+	def initialize path
 		@work_path = "/home/#{`whoami`.strip}/#{path}"
 		@destin_path = "/tmp"
 		@arch = []
