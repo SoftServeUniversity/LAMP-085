@@ -6,10 +6,10 @@ module Unarchive
   #
   class ScanDir
     def initialize
-      unless Dir.exist?(WORK_PATH)
+      unless File.exist?(WORK_PATH)
         raise "Directory #{WORK_PATH} does not exist"
       end
-      unless Dir.exist?(DESTIN_PATH)
+      unless File.exist?(DESTIN_PATH)
         raise "Directory #{DESTIN_PATH} does not exist"
       end
 

@@ -1,8 +1,8 @@
-require 'active_support/inflector'
 require "./scan_dir.rb"
 require "./pzip.rb"
 require "./p7z.rb"
 require "fileutils"
+require 'active_support/inflector'
 
 Unarchive::ScanDir.new.get_archives.each do |f|
 	homework = f.slice(/.*:/).slice(0..-2)
