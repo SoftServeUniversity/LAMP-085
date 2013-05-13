@@ -1,19 +1,25 @@
 require 'rubygems'
-require_relative '../lib/directory_manager'
-
-RSpec.configure do |config|
-  config.tty = true
-  config.color = true
-end
+require_relative '../lib/DirectoryManager'
+require_relative '../lib/exec.rb'
 
 describe DirectoryManager do
-  describe '#get_archives' do
-    before(:each) do
-      @object = DirectoryManager.new("LAMP-085/support/")
-    end
-    it 'return names of work directory archive files' do
-      @object.get_archives
-      @object.instance_variable_get(:@arch).should have(6).items
-    end
-  end
+	describe '#to_s' do
+		before(:each) do
+			@object = DirectoryManager.new
+		end
+		it 'return empty' do
+			@object.to_s.should eq "[]\n[]"
+		end
+	end
+end
+
+a = Calculator.new
+ 
+a.summa
+
+describe Calculator do
+    it "Test of calculator" do
+    s = Calculator.new
+    s.summa.should == 6006
+end
 end
