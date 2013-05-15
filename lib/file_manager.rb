@@ -17,7 +17,7 @@ module FileManager
       if Dir::entries(@current_path).map!{|i| File::extname(i)}.include?(".rb")
         @folder = "ruby"
       elsif Dir::entries(@current_path).map!{|i| File::extname(i)}.include?(".slc")
-      @folder = "scala"
+        @folder = "scala"
       else 
         raise "Directory #{@student} hasn't ruby or scala files "
       end
