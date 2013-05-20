@@ -37,7 +37,6 @@ module HomeWorkChecker
 
     protected
     def exist_xml?(archive_name)
-      return false if File::extname(archive_name) == '.xml' 
       extname_len = File::extname(archive_name).length
       extname_len.times { archive_name.chop! }
       File::exist? "#{@work_path}/#{archive_name}.xml"

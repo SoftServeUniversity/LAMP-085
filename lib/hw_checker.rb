@@ -16,8 +16,7 @@ require_relative './test_run/python_test_run'
 module HomeWorkChecker
   FILE_TYPES = {
     '.7z' => Unarchive::SevenZip,
-    '.zip' => Unarchive::StandartZip,
-    '.xml' => ''
+    '.zip' => Unarchive::StandartZip
   }
   LANGUAGE_TYPES = {
     '.rb' => TestRun::RubyTestRun,
