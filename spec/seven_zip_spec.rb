@@ -1,26 +1,24 @@
 require 'rubygems'
-require '../lib/unarchive'
-require_relative '../lib/seven_zip'
+require_relative '../lib/hw_checker'
 
-describe Unarchive::SevenZip do
+describe HomeWorkChecker::Unarchive::SevenZip do
   before(:each) do
-    @dirname = Unarchive::TMP_PATH
-    @filename = 'homework-600:anonim.7z'
-    @name_student = 'anonim'
-    @archive_path = Unarchive::WORK_PATH
-    @unarchive1 = Unarchive::SevenZip.new(@filename, @name_student).extract    
+    @work_path = '../source'
+    @filename = 'homework-900:tarasov.7z'
+    @tmp_path = '/tmp/'
+    @unarchive1 = HomeWorkChecker::Unarchive::SevenZip.new(@work_path, @tmp_path, @filename).extract    
   end
 
   after(:each) do
-    `rm -rf #{@dirname}/#{@name_student}/#{@filename.delete '.7z'}`
+    `rm -rf #{@tmp_path}/#{@filename.chomp(".7z")}`
   end
 
   it 'should exist in temp' do
-    Dir.exist?("#{@dirname}/#{@name_student}/#{@filename.delete '.7z'}").should be_true
+    Dir.exist?("#{@tmp_path}/#{@filename.chomp(".7z")}").should be_true
   end
 
   it 'authenticity archive' do
-    @authenticity = `7za t #{@archive_path}/#{@filename}`
+    @authenticity = `7za t #{@work_path}/#{@filename}`
     @authenticity = @authenticity.include? "Everything is Ok"
     @authenticity.should be_true
   end
