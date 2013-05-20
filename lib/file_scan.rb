@@ -2,10 +2,10 @@ module HomeWorkChecker
   class FileScan < Base
     attr_reader :work_path, :tmp_path
 
-    def initialize(work_path, tmp_path = '/tmp')
+    def initialize(work_path, tmp_path = '../lib/tmp')
       @work_path, @tmp_path = work_path, tmp_path
       raise "Directory #{@work_path} does not exist" unless Dir::exist?(@work_path)
-      raise "Directory #{@tmp_path} does not exist" unless Dir::exist?(@tmp_path)
+      FileUtils::mkdir_p("#{tmp_path}") unless Dir::exist?(@tmp_path)
     end
 
     def perform
@@ -15,24 +15,7 @@ module HomeWorkChecker
           @files << p
         end
       end
-    end
-
-    def each
-      if block_given?
-        i = 0
-        while i < @files.size
-          yield(@files[i], File::extname(@files[i]) )
-          i += 1  
-        end
-      end
       @files
-    end
-
-    def destroy_directory(archive_name)
-      extname_len = File::extname(archive_name).length
-      extname_len.times { archive_name.chop! }
-      FileUtils::remove_dir("#{@tmp_path}/#{archive_name}") if Dir::exist?("#{@tmp_path}/#{archive_name}")
-      archive_name
     end
 
     protected

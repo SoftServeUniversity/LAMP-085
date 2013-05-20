@@ -1,6 +1,7 @@
 require 'fileutils'
 require_relative './base'
 require_relative './file_scan'
+require_relative './file_manager'
 
 require_relative './unarchive/unarchive'
 require_relative './unarchive/zip'
