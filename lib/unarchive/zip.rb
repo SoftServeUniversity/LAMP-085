@@ -1,9 +1,12 @@
 module HomeWorkChecker
   module Unarchive
-    class Zip < Base
-      def initialize(work_path, tmp_path, filename)
-        @work_path, @tmp_path, @filename = work_path, tmp_path, filename
+    class Zip
+
+      def initialize(filename, tmp_path = '/tmp')
+        @file = filename
+        `7za t #{@file}`
+        `7z x #{@file} -o#{tmp_path}`
       end
     end
   end
-end 
+end

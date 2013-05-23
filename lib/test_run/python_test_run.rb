@@ -1,14 +1,10 @@
 module HomeWorkChecker
   module TestRun
-    class PythonTestRun < TestBase
+    class PythonTestRun
       def initialize(path)
-        super
-      end
-
-      def perform
-        system `cd "#{@path}/test"`
-        system `nosetests` 
+        `cd #{path}/test`
+        puts `nosetests`
       end
     end
   end
-end 
+end

@@ -1,23 +1,17 @@
-require 'fileutils'
-require_relative './base'
-require_relative './file_scan'
-require_relative './file_manager'
+require 'active_support/core_ext/hash'
 
-require_relative './unarchive/unarchive'
-require_relative './unarchive/zip'
-require_relative './unarchive/seven_zip'
-require_relative './unarchive/standart_zip'
-
-require_relative './test_run/test_run'
-require_relative './test_run/test_base'
-require_relative './test_run/ruby_test_run'
-require_relative './test_run/python_test_run'
-
+require_relative '../lib/base/base'
+require_relative '../lib/file_scan/file_scan'
+require_relative '../lib/unarchive/unarchive'
+require_relative '../lib/unarchive/zip'
+require_relative '../lib/test_run/test_run'
+require_relative '../lib/test_run/ruby_test_run'
+require_relative '../lib/test_run/python_test_run'
 
 module HomeWorkChecker
   FILE_TYPES = {
-    '.7z' => Unarchive::SevenZip,
-    '.zip' => Unarchive::StandartZip
+    '.7z' => '',
+    '.zip' => ''
   }
   LANGUAGE_TYPES = {
     '.rb' => TestRun::RubyTestRun,

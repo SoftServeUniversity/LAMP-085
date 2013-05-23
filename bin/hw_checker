@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/hw_checker'
+
+HomeWorkChecker::Base.new(ARGV[0]).start
