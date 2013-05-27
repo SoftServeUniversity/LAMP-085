@@ -1,12 +1,11 @@
-require 'rubygems'
 require_relative '../lib/hw_checker'
 
 module HomeWorkChecker
   describe Base do
     before(:each) do
       @archives = ['aaa.zip', 'bbb.7z']
-      @work_path = File.expand_path('./support')
-      @tmp_path = File.expand_path('./support/tmp')
+      @work_path = './support/'
+      @tmp_path = './support/tmp'
       @baza = HomeWorkChecker::Base.new(@work_path)
     end
     context '#start' do
@@ -18,7 +17,7 @@ module HomeWorkChecker
         szip_files.should_receive(:new).with("aaa.zip", @tmp_path).once
         szip_files.should_receive(:new).with("bbb.7z", @tmp_path).once
 
-        run_files = double("HomeWorkChecker::TestRun")
+        run_files = double("HomeWorkChecker::TestRunStat")
         run_files.stub(:detect_language).with("#{@tmp_path}/task1").and_return(".rb")
         rtr = stub(LANGUAGE_TYPES[run_files.detect_language "#{@tmp_path}/task1"])
         rtr.should_receive(:new).with("#{@tmp_path}/task1").once

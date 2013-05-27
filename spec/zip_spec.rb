@@ -1,4 +1,3 @@
-require 'rubygems'
 require_relative '../lib/hw_checker'
 
 describe HomeWorkChecker::Unarchive::Zip do
@@ -28,4 +27,3 @@ describe HomeWorkChecker::Unarchive::Zip do
     $?.to_s[-1].to_i.should equal(0)    
   end
 end
-

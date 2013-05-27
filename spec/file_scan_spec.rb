@@ -1,4 +1,3 @@
-require 'rubygems'
 require_relative '../lib/hw_checker'
 
 module HomeWorkChecker
@@ -15,8 +14,8 @@ module HomeWorkChecker
         end
         true
       end
-      it 'should have exactly 5 items' do
-        @file_scan.instance_variable_get(:@files).should have(5).items 
+      it 'should have exactly 6 items' do
+        @file_scan.instance_variable_get(:@files).should have(6).items 
       end
       it 'should contain .zip/7z files only' do
         is_all_archives?.should_not be_false
@@ -32,6 +31,7 @@ module HomeWorkChecker
           ["homework-500:ivanov", ".7z"],
           ["homework-500:petrov", ".zip"],
           ["homework-500:sidorov", ".zip"],
+          ["homework-700:petrov", ".zip"],
           ["homework-700:sidorov", ".zip"],
           ["homework-900:tarasov", ".7z"]
         )

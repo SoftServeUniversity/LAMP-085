@@ -1,5 +1,5 @@
 module HomeWorkChecker
-  module TestRun
+  module TestRunStat
     class PythonTestRun
       def initialize(path)
         `cd #{path}/test`
