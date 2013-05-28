@@ -8,6 +8,8 @@ require_relative '../lib/hw_checker/python_stat'
 require_relative '../lib/hw_checker/python_test_run'
 require_relative '../lib/hw_checker/ruby_stat'
 require_relative '../lib/hw_checker/ruby_test_run'
+require_relative '../lib/hw_checker/database_write'
+
 
 module HomeWorkChecker
   FILE_TYPES = ['.7z', '.zip'] 
