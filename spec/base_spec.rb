@@ -6,7 +6,7 @@ module HomeWorkChecker
       @archives = ['aaa.zip', 'bbb.7z']
       @work_path = './support/'
       @tmp_path = './support/tmp'
-      @baza = HomeWorkChecker::Base.new(@work_path)
+      #@baza = HomeWorkChecker::Base.new(@work_path)
     end
     context '#start' do
       it 'extracting should execute 5 times' do

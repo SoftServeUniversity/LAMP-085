@@ -1,7 +1,9 @@
 module HomeWorkChecker
   class FileScan
-    def initialize(work_path)
-      @work_path, @files = work_path, []
+    def initialize(work_path, tmp_path = '/tmp')
+      raise "Directory #{work_path} does not exist" unless Dir::exist?(work_path)
+      raise "Directory #{tmp_path} does not exist" unless Dir::exist?(tmp_path)
+      @work_path, @tmp_path, @files = work_path, tmp_path, []
       Dir.foreach(@work_path) do |p|
         if File.file?("#{@work_path}/#{p}") && FILE_TYPES.include?(File.extname p) && !exist_xml?(p)
           @files << p
@@ -20,10 +22,6 @@ module HomeWorkChecker
         end 
       end
       @files
-    end
-
-    def self.detect_studname(dirname)
-      dirname.split(':').last
     end
 
     private

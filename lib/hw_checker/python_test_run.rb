@@ -7,16 +7,17 @@ module HomeWorkChecker
       end
 
       def perform
-        Dir.foreach("#{@tmp_path}/#{@dirname}/test/application") do |p|
-          next unless File.file?("#{@tmp_path}/#{@dirname}/test/application/#{p}") && File.extname(p) == '.py'
-          `python #{@tmp_path}/#{@dirname}/test/application/#{p} > #{@tmp_path}/#{@dirname}/test/#{p}.tmp`
-          count_passed_failed("#{@tmp_path}/#{@dirname}/test/#{p}.tmp")
+        Dir.foreach("#{@tmp_path}/#{@dirname}/tests/application") do |p|
+          next unless File.file?("#{@tmp_path}/#{@dirname}/tests/application/#{p}") && File.extname(p) == '.py' && p != '__init__.py'
+          `python #{@tmp_path}/#{@dirname}/tests/application/#{p} > #{@tmp_path}/#{@dirname}/tests/application/#{p}.tmp 2>&1`
+          count_passed_failed("#{@tmp_path}/#{@dirname}/tests/application/#{p}.tmp")
         end
         calc_percent_passed
       end
 
       private
       def count_passed_failed(filename)
+        report = File.open(filename).first.chomp
         report.each_char do |value|
           @passed += 1 if value == '.'
           @failed += 1 if (value == 'F' || value == 'E')
@@ -25,7 +26,7 @@ module HomeWorkChecker
 
       def calc_percent_passed
         return "0.00%" if @passed.zero? && @failed.zero?
-        '%.2f%%' % (@passed.to_f / (@passed + @failed) * 100).round(2)
+        '%.2f%%' % (@passed.to_f / (@passed + @failed) * 100)
       end
     end
   end

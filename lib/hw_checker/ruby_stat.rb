@@ -31,7 +31,7 @@ module HomeWorkChecker
 
       def calc_percent_quality
         return '0.00%' if @lines_all.zero?
-        '%.2f%%' % ( (1.0 - @lines_failed.to_f / @lines_all) * 100).round(2)
+        '%.2f%%' % ( (1.0 - @lines_failed.to_f / @lines_all) * 100)
       end
     end
   end

@@ -7,19 +7,17 @@ module HomeWorkChecker
       end
 
       def perform
-        Dir.foreach("#{@tmp_path}/#{@dirname}") do |p|
-          next unless File::file?("#{@tmp_path}/#{@dirname}/#{p}") && File.extname(p) == '.py'
-          `pylint #{@tmp_path}/#{@dirname}/#{p} > #{@tmp_path}/#{@dirname}/#{p}.tmp  2>&1`
+        result = 0
+        Dir.foreach("#{@tmp_path}/#{@dirname}/tests/statistic") do |p|
+          next unless File.file?("#{@tmp_path}/#{@dirname}/tests/statistic/#{p}") && File.extname(p) == '.py' && p != '__init__.py'
+          `pylint #{@tmp_path}/#{@dirname}/tests/statistic/#{p} > #{@tmp_path}/#{@dirname}/tests/statistic/#{p}.tmp 2>&1`
+          result = calc_percent_quality("#{@tmp_path}/#{@dirname}/tests/statistic/#{p}.tmp")
         end
-        calc_percent_quality
+        result
       end
 
       def calc_percent_quality(filename)
-        test_line = '' ; res = '' ; rake = 0
-        test_line = `tail -n 2 result.txt`
-        res = test_line.scan(/\d{1,2}/)
-        rake = res.shift.to_f
-        (( rake/10 ) * 100 )
+        '%.2f%%' % ( (`tail -n 2 #{filename}`).scan(/\d{1,2}/).shift.to_f / 10 * 100)
       end
     end
   end

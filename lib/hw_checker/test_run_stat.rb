@@ -1,7 +1,7 @@
 module HomeWorkChecker
   module TestRunStat
     def self.detect_language(path)
-      raise "Subdirectory 'test' don't exist in folder #{path}" unless Dir.exist?("#{path}/test")
+      return '.py' unless Dir.exist?("#{path}/test")
       Dir.foreach("#{path}/test") do |p|
         if File.file?("#{path}/test/#{p}") && LANGUAGE_TYPES.include?(File.extname p)
           return File.extname p
@@ -22,10 +22,14 @@ module HomeWorkChecker
     def self.execute(work_path, tmp_path, dirname)
       class_names = LANGUAGE_TYPES[TestRunStat::detect_language("#{tmp_path}/#{dirname}")]
       test_passed = class_names.first.new(tmp_path, dirname).perform
-      code_quality = class_names.last.new(tmp_path, dirname).perform
+      code_quality = class_names.last.new(tmp_path, dirname).perform      
       File.open("#{work_path}/#{dirname}-result.xml", 'w') do |file| 
         file.write TestRunStat::generate_xml(test_passed, code_quality)
       end
+      {
+        :failed_passed_ratio => test_passed,
+        :code_quality => code_quality
+      }
     end
   end
 end

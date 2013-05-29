@@ -1,4 +1,4 @@
-require 'mysql2'
+#require 'mysql2'
 module HomeWorkChecker
   class DataBaseWrite
     def initialize

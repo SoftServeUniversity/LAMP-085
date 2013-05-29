@@ -27,7 +27,7 @@ module HomeWorkChecker
 
       def calc_percent_passed
         return "0.00%" if @passed.zero? && @failed.zero?
-        '%.2f%%' % (@passed.to_f / (@passed + @failed) * 100).round(2)
+        '%.2f%%' % (@passed.to_f / (@passed + @failed) * 100)
       end
     end
   end
