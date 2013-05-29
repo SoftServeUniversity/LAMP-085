@@ -1,0 +1,27 @@
+%h1 Listing reports
+
+%table
+  %tr
+    %th Student
+    %th Homework
+    %th Ratio
+    %th Quality
+    %th Time
+    %th
+    %th
+    %th
+
+  - @reports.each do |report|
+    %tr
+      %td= report.student_id
+      %td= report.homework_id
+      %td= report.ratio
+      %td= report.quality
+      %td= report.time
+      %td= link_to 'Show', report
+      %td= link_to 'Edit', edit_report_path(report)
+      %td= link_to 'Destroy', report, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Report', new_report_path

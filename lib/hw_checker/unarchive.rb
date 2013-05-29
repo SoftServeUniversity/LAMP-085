@@ -1,4 +1,6 @@
-module HomeWorkChecker
-  module Unarchive
+module HwCheker  
+  module HomeWorkChecker
+    module Unarchive
+    end
   end
 end

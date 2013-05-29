@@ -1,0 +1,25 @@
+= form_for @report do |f|
+  - if @report.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@report.errors.count, "error")} prohibited this report from being saved:"
+      %ul
+        - @report.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :student_id
+    = f.number_field :student_id
+  .field
+    = f.label :homework_id
+    = f.number_field :homework_id
+  .field
+    = f.label :ratio
+    = f.text_field :ratio
+  .field
+    = f.label :quality
+    = f.text_field :quality
+  .field
+    = f.label :time
+    = f.text_field :time
+  .actions
+    = f.submit 'Save'
