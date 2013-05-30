@@ -4,7 +4,7 @@ module HomeWorkChecker
   describe HomeWorkChecker::TestRunStat do
     context '.detect_language' do
       before(:each) do
-        @detect_test = TestRunStat.detect_language('./support/homework-500:petrov')
+        @detect_test = TestRunStat.detect_language('./support/julia.tymo_creational.patterns')
       end
       it 'should contain .rb/.py tests' do
         @detect_test.should == '.rb'

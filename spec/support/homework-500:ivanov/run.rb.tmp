@@ -1,9 +1,0 @@
-== ./support/homework-500:ivanov/run.rb ==
-C:  1: Missing utf-8 encoding comment.
-C:  2: Trailing whitespace detected.
-C:  3: Tab detected.
-C:  4: Tab detected.
-W:  5: Assigned but unused variable - c
-C:  5: Tab detected.
-
-1 file inspected, 6 offences detected

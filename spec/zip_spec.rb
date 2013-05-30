@@ -2,8 +2,8 @@ require_relative '../lib/hw_checker'
 
 describe HomeWorkChecker::Unarchive::Zip do
   before(:each) do
-    @path_filename = './support/homework-900:tarasov.7z'
-    @filename = 'homework-900:tarasov.7z'
+    @path_filename = './support/julia.tymo_creational.patterns.7z'
+    @filename = 'julia.tymo_creational.patterns.7z'
     @tmp_path = '/tmp/support/'
   end
 

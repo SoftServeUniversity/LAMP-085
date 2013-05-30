@@ -4,7 +4,7 @@ module HomeWorkChecker
   module TestRunStat
     describe RubyStat do
       before(:all) do
-        @ruby_stat = RubyStat.new('./support', 'homework-500:ivanov')
+        @ruby_stat = RubyStat.new('./support', 'julia.tymo_creational.patterns')
         @ruby_stat.perform
       end
 
@@ -22,7 +22,7 @@ module HomeWorkChecker
 
       context '#calc_percent_quality' do
         it 'should calculate percent correctly' do
-          @ruby_stat.send(:calc_percent_quality).should == '28.57%'
+          @ruby_stat.send(:calc_percent_quality).should == 28.57
         end
       end
     end

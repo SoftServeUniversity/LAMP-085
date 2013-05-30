@@ -17,7 +17,7 @@ module HomeWorkChecker
       end
 
       def calc_percent_quality(filename)
-        '%.2f%%' % ( (`tail -n 2 #{filename}`).scan(/\d{1,2}/).shift.to_f / 10 * 100)
+        ( (`tail -n 2 #{filename}`).scan(/\d{1,2}/).shift.to_f / 10 * 100).round(2)
       end
     end
   end

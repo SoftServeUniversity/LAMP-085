@@ -15,7 +15,7 @@ module HomeWorkChecker
         true
       end
       it 'should have exactly 6 items' do
-        @file_scan.instance_variable_get(:@files).should have(6).items 
+        @file_scan.instance_variable_get(:@files).should have(7).items 
       end
       it 'should contain .zip/7z files only' do
         is_all_archives?.should_not be_false
@@ -28,12 +28,13 @@ module HomeWorkChecker
       end
       it 'should yield correct data' do
         expect { |b| @file_scan.each(&b) }.to yield_successive_args(
-          ["homework-500:ivanov", ".7z"],
-          ["homework-500:petrov", ".zip"],
-          ["homework-500:sidorov", ".zip"],
-          ["homework-700:petrov", ".zip"],
-          ["homework-700:sidorov", ".zip"],
-          ["homework-900:tarasov", ".7z"]
+          ["julia.tymo_creational.patterns", ".7z"],
+          ["julia.tymo_iterators.in.ruby", ".zip"],
+          ["pavlo.petryk_creational.patterns", ".zip"],
+          ["pavlo.petryk_final.tasks", ".7z"],
+          ["roman.horobets_creational.patterns", ".7z"],
+          ["roman.horobets_final.tasks", ".zip"],
+          ["roman.horobets_iterators.in.ruby", ".zip"]
         )
       end
     end
