@@ -6,8 +6,8 @@ class ReportsController < ApplicationController
     @reports = Report.all
 
     path = File.expand_path "app/resived"
-    HwCheker.scan_only( path).each do |name, type|
-      Resque.enqueue(UnarchiveProcesor, HwCheker.check_new( path, name, type))
+    HwCheker.scan_only(path).each do |name, type|
+      Resque.enqueue(UnarchiveProcesor, path, name, type)
       # Resque.after_fork = Proc.new { PUT CODE HERE }
     end
     respond_to do |format|
