@@ -1,0 +1,4984 @@
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+  [1m[36m (110.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (197.3ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (4.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20130523070611)
+  [1m[35m (72.0ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (140.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (139.7ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (32.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130523070611')[0m
+Migrating to CreateStudents (20130529091028)
+  [1m[35m (79.3ms)[0m  CREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091028')[0m
+Migrating to CreateHomeworks (20130529091447)
+  [1m[35m (81.0ms)[0m  CREATE TABLE `homeworks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `language` varchar(255), `description` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091447')[0m
+Migrating to CreateReports (20130529091845)
+  [1m[35m (81.1ms)[0m  CREATE TABLE `reports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `student_id` int(11), `homework_id` int(11), `ratio` float, `quality` float, `time` float, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091845')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:09:26 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:28 +0300
+
+
+Started POST "/resque/queues/unarchive_procesor/remove" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/queues" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:32 +0300
+
+
+Started GET "/resque/failed" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:33 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:09:35 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:09:46 +0300
+Processing by ReportsController#index as HTML
+Completed 401 Unauthorized in 9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-06-04 18:09:46 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.0ms)
+Compiled results.css  (46ms)  (pid 4711)
+Compiled scaffolds.css  (11ms)  (pid 4711)
+Compiled application.css  (75ms)  (pid 4711)
+Compiled jquery.js  (23ms)  (pid 4711)
+Compiled jquery_ujs.js  (0ms)  (pid 4711)
+Compiled results.js  (383ms)  (pid 4711)
+Compiled application.js  (459ms)  (pid 4711)
+Completed 200 OK in 734ms (Views: 651.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /results.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /results.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:47 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:09:51 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-06-04 18:10:07 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vf3AZC/qj2skhp+QbdT9hknUOv7z6IJDdUFMQlSQWjc=", "user"=>{"email"=>"pavlo_petryk@ukr.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'pavlo_petryk@ukr.net' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-06-04 15:10:07', NULL, NULL, 'pavlo_petryk@ukr.net', '$2a$10$aFUVPs76OAhOhBVcpKZ0KOtlqX69nc9nCJ5/Pt2p7QzAkfJXkGGAm', NULL, NULL, NULL, NULL, NULL, 0, '2013-06-04 15:10:07')[0m
+  [1m[35m (32.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2013-06-04 15:10:07', `current_sign_in_at` = '2013-06-04 15:10:07', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2013-06-04 15:10:07' WHERE `users`.`id` = 1
+  [1m[36m (33.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 301ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:10:07 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.4ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 71ms (Views: 44.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:10:08 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:10:12 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:10:12 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:10:12 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:10:12 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:10:12 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:10:12 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:10:12 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:10:14 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'julia.tymo' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mStudent Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM `students` WHERE `students`.`name` = BINARY 'julia.tymo' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `students` (`created_at`, `name`, `updated_at`) VALUES ('2013-06-04 15:10:48', 'julia.tymo', '2013-06-04 15:10:48')
+  [1m[36m (59.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mHomework Load (0.3ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'creational.patterns' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mHomework Exists (0.5ms)[0m  SELECT 1 AS one FROM `homeworks` WHERE `homeworks`.`title` = BINARY 'creational.patterns' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `homeworks` (`created_at`, `description`, `language`, `title`, `updated_at`) VALUES ('2013-06-04 15:10:48', 'su', 'ruby', 'creational.patterns', '2013-06-04 15:10:48')[0m
+  [1m[35m (34.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:10:48', 1, 100.0, 0.0, 1, 0.85, '2013-06-04 15:10:48')
+  [1m[36m (28.6ms)[0m  [1mCOMMIT[0m
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'julia.tymo' LIMIT 1[0m
+  [1m[35mHomework Load (0.4ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'iterators.in.ruby' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mHomework Exists (0.3ms)[0m  SELECT 1 AS one FROM `homeworks` WHERE `homeworks`.`title` = BINARY 'iterators.in.ruby' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `homeworks` (`created_at`, `description`, `language`, `title`, `updated_at`) VALUES ('2013-06-04 15:10:50', 'su', 'ruby', 'iterators.in.ruby', '2013-06-04 15:10:50')[0m
+  [1m[35m (31.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:10:50', 2, 100.0, 0.0, 1, 0.83, '2013-06-04 15:10:50')
+  [1m[36m (36.1ms)[0m  [1mCOMMIT[0m
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'roman.horobets' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `students` WHERE `students`.`name` = BINARY 'roman.horobets' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `students` (`created_at`, `name`, `updated_at`) VALUES ('2013-06-04 15:10:51', 'roman.horobets', '2013-06-04 15:10:51')
+  [1m[36m (34.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mHomework Load (0.3ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'iterators.in.ruby' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:10:51', 2, 100.0, 100.0, 2, 0.82, '2013-06-04 15:10:51')
+  [1m[36m (38.3ms)[0m  [1mCOMMIT[0m
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'pavlo.petryk' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mStudent Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM `students` WHERE `students`.`name` = BINARY 'pavlo.petryk' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `students` (`created_at`, `name`, `updated_at`) VALUES ('2013-06-04 15:10:52', 'pavlo.petryk', '2013-06-04 15:10:52')
+  [1m[36m (38.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mHomework Load (0.2ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'creational.patterns' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:10:52', 1, 100.0, 0.0, 3, 0.87, '2013-06-04 15:10:52')
+  [1m[36m (44.3ms)[0m  [1mCOMMIT[0m
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'roman.horobets' LIMIT 1[0m
+  [1m[35mHomework Load (0.1ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'creational.patterns' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:10:52', 1, 0.0, 100.0, 2, 0.39, '2013-06-04 15:10:52')
+  [1m[36m (35.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'pavlo.petryk' LIMIT 1[0m
+  [1m[35mHomework Load (0.4ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'final.tasks' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mHomework Exists (0.4ms)[0m  SELECT 1 AS one FROM `homeworks` WHERE `homeworks`.`title` = BINARY 'final.tasks' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `homeworks` (`created_at`, `description`, `language`, `title`, `updated_at`) VALUES ('2013-06-04 15:10:54', 'su', 'ruby', 'final.tasks', '2013-06-04 15:10:54')[0m
+  [1m[35m (33.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:10:54', 3, 100.0, 100.0, 3, 0.84, '2013-06-04 15:10:54')
+  [1m[36m (32.7ms)[0m  [1mCOMMIT[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'roman.horobets' LIMIT 1[0m
+  [1m[35mHomework Load (0.6ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'final.tasks' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:10:55', 3, 100.0, 60.0, 2, 1.31, '2013-06-04 15:10:55')
+  [1m[36m (36.3ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:11:55 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.5ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 43ms (Views: 25.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:11:58 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:12:01 +0300
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'julia.tymo' LIMIT 1[0m
+  [1m[35mHomework Load (0.3ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'creational.patterns' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:12:01', 1, 28.57, 0.0, 1, 1.25, '2013-06-04 15:12:01')
+  [1m[36m (46.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:12:03 +0300
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT `students`.* FROM `students` WHERE `students`.`name` = 'julia.tymo' LIMIT 1[0m
+  [1m[35mHomework Load (0.4ms)[0m  SELECT `homeworks`.* FROM `homeworks` WHERE `homeworks`.`title` = 'iterators.in.ruby' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `reports` (`created_at`, `homework_id`, `quality`, `ratio`, `student_id`, `time`, `updated_at`) VALUES ('2013-06-04 15:12:03', 2, 71.43, 0.0, 1, 1.17, '2013-06-04 15:12:03')
+  [1m[36m (53.0ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:12:04 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:12:04 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:12:04 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:12:04 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:12:04 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:12:04 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:12:04 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:12:05 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:12:05 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:12:05 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:12:05 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:12:05 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:12:05 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:12:05 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:32:39 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.3ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (30.5ms)
+Completed 200 OK in 103ms (Views: 51.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /results.css - 200 OK (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:32:40 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.2ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 33ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:12 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.1ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 59ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:13 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.2ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (11.0ms)
+Completed 200 OK in 36ms (Views: 31.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:34:59 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.2ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:00 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.2ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.2ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 55ms (Views: 50.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.1ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mReport Load (0.2ms)[0m  [1mSELECT `reports`.* FROM `reports` [0m
+  Rendered reports/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:35:01 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:46:49 +0300
+
+
+Started GET "/resque/failed" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:46:52 +0300
+
+
+Started POST "/resque/failed/clear" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/failed" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:21 +0300
+
+
+Started GET "/resque/queues" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:23 +0300
+
+
+Started GET "/resque/workers" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/idle.png" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:24 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:27 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (14.4ms)
+Compiled jquery.js  (2ms)  (pid 5670)
+Compiled jquery_ujs.js  (0ms)  (pid 5670)
+Compiled application.js  (95ms)  (pid 5670)
+Completed 200 OK in 389ms (Views: 239.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /results.css - 200 OK (12ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /jquery.js - 200 OK (5ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /results.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 18:47:46 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:51 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:53 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:54 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:55 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:56 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:57 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:57 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:57 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:57 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:47:57 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:57 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:57 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:47:58 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:47:59 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 18:48:00 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 18:48:00 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 18:48:00 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 18:48:00 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 18:48:00 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 18:48:00 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 18:48:00 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque" for 127.0.0.1 at 2013-06-04 21:35:20 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:35:21 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 21:35:28 +0300
+Processing by ReportsController#index as HTML
+Completed 401 Unauthorized in 36ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 377ms (Views: 227.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Served asset /results.css - 200 OK (3ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Served asset /results.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:29 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y+d3io5wFSuZeM1oNm78BIMJZEPq54DL72jEH04shDM=", "user"=>{"email"=>"pavlo_petryk@ukr.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'pavlo_petryk@ukr.net' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (16.1ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2013-06-04 18:35:44', `sign_in_count` = 2, `updated_at` = '2013-06-04 18:35:44' WHERE `users`.`id` = 1[0m
+  [1m[35m (36.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 326ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.4ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (11.5ms)
+Completed 200 OK in 77ms (Views: 53.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 21:35:44 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:35:48 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:35:48 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:35:48 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:35:48 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:35:48 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:35:48 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:35:48 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:35:49 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:35:49 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:35:49 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:35:49 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:35:49 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:35:49 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:35:49 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:35:50 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:35:50 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:35:50 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:35:50 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:35:50 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:35:50 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:35:50 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:35:51 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:35:51 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:35:51 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:35:51 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:35:51 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:35:51 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:35:51 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:25 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:25 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:25 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:25 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:25 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:25 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+Connecting to database specified by database.yml
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:26 +0300
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:27 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:27 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:27 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:27 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:27 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:27 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:27 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:28 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:28 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:28 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:28 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:28 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:28 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:28 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:29 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:30 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:31 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:32 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:33 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:34 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:35 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:36 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:37 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:37 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:37 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:37 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:37 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:37 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:37 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:36:38 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:36:38 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:36:38 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:36:38 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:36:38 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:36:38 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:36:38 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 60ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Served asset /results.css - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 21:37:13 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:37:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:37:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:37:16 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:37:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:37:16 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:37:16 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:37:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:37:18 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:37:19 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:37:20 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:37:20 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:37:20 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:37:20 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:37:20 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:37:20 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:37:20 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:37:22 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:37:24 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:37:26 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:37:26 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:37:26 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:37:26 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:37:26 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:37:26 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:37:26 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:31 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:31 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:31 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:31 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:31 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:31 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:59:31 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 21:59:34 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 269ms (Views: 123.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 21:59:35 +0300
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 21:59:35 +0300
+Served asset /results.css - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 21:59:35 +0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 21:59:35 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 21:59:35 +0300
+Served asset /results.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 21:59:35 +0300
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 21:59:35 +0300
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:37 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:37 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:37 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:37 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:37 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:37 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:59:37 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:39 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:39 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:39 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:39 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:39 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:39 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:59:39 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:40 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:40 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:40 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:59:41 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:42 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 21:59:43 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:56 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 21:59:59 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 21:59:59 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 21:59:59 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 21:59:59 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 21:59:59 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 21:59:59 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:00 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (34.1ms)
+Completed 200 OK in 64ms (Views: 54.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 34ms (Views: 25.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:04 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (31.9ms)
+Completed 200 OK in 63ms (Views: 53.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /results.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 31ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:05 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 22:00:07 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:07 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:07 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:07 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:07 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:07 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 22:00:08 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:08 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:08 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:08 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:08 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:08 +0300
+
+
+Started GET "/resque/queues/unarchive_procesor" for 127.0.0.1 at 2013-06-04 22:00:09 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:09 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:09 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:09 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:09 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:09 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:14 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:16 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:16 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:16 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:17 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:17 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:17 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:17 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:17 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:17 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:17 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:18 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:00:19 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 39ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:56 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 36ms (Views: 26.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 58ms (Views: 52.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 34ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:57 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 61ms (Views: 52.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:00:58 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 35ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:08 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 57ms (Views: 51.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:01:09 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:01:11 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:01:11 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:01:11 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:01:11 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:01:11 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:01:11 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:01:11 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:01:12 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:01:14 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:01:15 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:05:18 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:18 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:18 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:18 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:18 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:18 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:05:18 +0300
+
+
+Started GET "/resque/queues" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:19 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:05:21 +0300
+
+
+Started GET "/resque/queues" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:23 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:05:25 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 235ms (Views: 95.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Served asset /results.css - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Served asset /results.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:05:35 +0300
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:05:38 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:05:40 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:05:43 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:05:45 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:05:45 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:05:45 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:05:45 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:05:45 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:05:45 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:05:45 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:14:26 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:14:26 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:14:26 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:14:26 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:14:26 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:14:26 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:14:26 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:14:27 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:14:27 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:14:27 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:14:27 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:14:27 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:14:27 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:14:27 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (17.1ms)
+Completed 200 OK in 261ms (Views: 112.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Served asset /results.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Served asset /results.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:15:10 +0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:13 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:13 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:13 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:15:13 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:15:13 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:13 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:15:13 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:15:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:15:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:14 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:15:14 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:15 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:15 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:15 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:15:15 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:15:15 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:15 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:15:15 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:15:17 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque/queues" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:53 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:21:56 +0300
+
+
+Started GET "/resque/queues" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:58 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:21:59 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:22:03 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (14.1ms)
+Completed 200 OK in 226ms (Views: 92.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:22:03 +0300
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:22:03 +0300
+Served asset /results.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:03 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:22:03 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:04 +0300
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:04 +0300
+Served asset /results.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:04 +0300
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:10 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:11 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:12 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:12 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 22:22:12 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:12 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:12 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:12 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:12 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:13 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:15 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:16 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.1ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (6.6ms)
+Completed 200 OK in 32ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 22:22:32 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:35 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:35 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:35 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:35 +0300
+
+
+Started GET "/resque/working.png" for 127.0.0.1 at 2013-06-04 22:22:35 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:35 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:35 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:36 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 22:22:38 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 22:22:38 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 22:22:38 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 22:22:38 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 22:22:38 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 22:22:38 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 22:22:38 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+  [1m[36m (92.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (182.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20130523070611)
+  [1m[35m (96.0ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (198.1ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (189.6ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (32.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130523070611')[0m
+Migrating to CreateStudents (20130529091028)
+  [1m[35m (113.8ms)[0m  CREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091028')[0m
+Migrating to CreateHomeworks (20130529091447)
+  [1m[35m (122.4ms)[0m  CREATE TABLE `homeworks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `language` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (33.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091447')[0m
+Migrating to CreateReports (20130529091845)
+  [1m[35m (130.4ms)[0m  CREATE TABLE `reports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `student_id` int(11), `homework_id` int(11), `ratio` float, `quality` float, `time` float, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091845')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:53 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:55 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:55 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:55 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:55 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:55 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:55 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:55 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:56 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:23:57 +0300
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 401 Unauthorized in 86ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 115ms (Views: 101.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /scaffolds.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /results.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /results.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:12 +0300
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2013-06-04 23:24:15 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 23:24:15 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 23:24:16 +0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-06-04 23:25:00 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y+d3io5wFSuZeM1oNm78BIMJZEPq54DL72jEH04shDM=", "user"=>{"email"=>"pavlo_petryk@ukr.net", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'pavlo_petryk@ukr.net' LIMIT 1[0m
+  [1m[35mSQL (20.0ms)[0m  INSERT INTO `users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-06-04 20:25:01', NULL, NULL, 'pavlo_petryk@ukr.net', '$2a$10$mD/HMPCymHV1K6PVwKo0Duoc7skmhIaL.cAq5vVLp8g8RhIPUXu9m', NULL, NULL, NULL, NULL, NULL, 0, '2013-06-04 20:25:01')
+  [1m[36m (36.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2013-06-04 20:25:01', `current_sign_in_at` = '2013-06-04 20:25:01', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2013-06-04 20:25:01' WHERE `users`.`id` = 1[0m
+  [1m[35m (34.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 315ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mReport Load (0.2ms)[0m  SELECT `reports`.* FROM `reports` 
+  Rendered reports/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 52ms (Views: 45.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.css?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /results.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/results.js?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /results.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-04 23:25:01 +0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:25:13 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:25:13 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:25:13 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:25:13 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:25:13 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:25:13 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:25:13 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-04 23:25:14 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/auth/config/routes.rb:7)
+
+
+Started GET "/resque" for 127.0.0.1 at 2013-06-05 08:48:04 +0300
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2013-06-05 08:48:05 +0300
+
+
+Started GET "/resque/stats" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/stats/resque" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2013-06-05 08:48:09 +0300
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/railsapp/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/railsapp/config/routes.rb:7)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/ppetr/repos/hw_checker/railsapp/config/routes.rb:7)
