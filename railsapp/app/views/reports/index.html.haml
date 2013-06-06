@@ -1,26 +1,24 @@
 %h1 Listing reports
 
-%table
-  %tr
-    %th Student
-    %th Homework
-    %th Ratio
-    %th Quality
-    %th Time
-    %th
-    %th
-    %th
-
-  - @reports.each do |report|
+%table.data-table
+  %thead
     %tr
-      %td= report.student_id
-      %td= report.homework_id
-      %td= report.ratio
-      %td= report.quality
-      %td= report.time
-      %td= link_to 'Show', report
-      %td= link_to 'Edit', edit_report_path(report)
-      %td= link_to 'Destroy', report, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Student
+      %th Title
+      %th Ratio
+      %th Quality
+      %th Time
+      %th Language
+
+  %tbody
+    - @reports.each do |report|
+      %tr
+        %td= report.student.try(:name)
+        %td= report.homework.try(:title)
+        %td= report.ratio
+        %td= report.quality
+        %td= report.time
+        %td= report.homework.try(:language)
 
 %br
 

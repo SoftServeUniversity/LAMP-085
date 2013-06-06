@@ -10,3 +10,18 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+///= require jquery
+    //= require jquery_ujs
+    //= require jquery.ui.core
+    //= require jquery.ui.datepicker
+    //= require twitter/bootstrap
+    //= require dataTables/jquery.dataTables
+    //= require dataTables/jquery.dataTables.bootstrap
+    //= require dataTables/extras/TableTools
+
+
+    //= require_tree .
+
+    $.extend( $.fn.dataTableExt.oStdClasses, {
+      "sWrapper": "dataTables_wrapper form-inline"
+    } );
