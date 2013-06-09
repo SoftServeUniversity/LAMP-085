@@ -1,0 +1,23 @@
+%h1 General Statistic
+
+%table{:class => 'data-table display'}
+  %thead
+    %tr
+      %th Student
+      %th Homework
+      %th Language
+      %th Ratio
+      %th Quality
+      %th Time
+  
+  %tbody
+    - @reports.each do |report|
+      %tr
+        %td= report.student.try(:name)
+        %td= report.homework.try(:title)
+        %td= report.homework.try(:language)
+        %td= report.ratio
+        %td= report.quality
+        %td= report.time
+        
+

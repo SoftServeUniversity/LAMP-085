@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/hw_checker'
+
+begin
+  HomeWorkChecker::FileScan.new(ARGV[0], '/tmp').each do |name, type|
+    HomeWorkChecker::Base.start(ARGV[0], '/tmp', name, type)
+  end
+rescue HomeWorkChecker::DirectoryExistError => error
+  puts error.message, error.backtrace
+end

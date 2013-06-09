@@ -1,0 +1,18 @@
+/*
+*= require_self
+*= require jquery.ui.core
+*= require jquery.ui.theme
+*= require jquery.ui.datepicker
+*= require dataTables/jquery.dataTables.bootstrap
+*= require dataTables/extras/TableTools
+*= require dataTables/extras/TableTools_JUI
+*= require dataTables/src/demo_table_jui
+
+*= require_tree .
+*/
+
+
+#footer {
+  text-align: center;
+  color: #999;
+}

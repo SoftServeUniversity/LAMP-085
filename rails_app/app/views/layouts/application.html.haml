@@ -1,0 +1,46 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta{:charset => 'utf-8', :http_equiv => 'X-UA-Compatible', :content => 'IE=Edge,chrome=1', :name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+    %title= content_for?(:title) ? yield(:title) : 'Hw::Checker'
+    = csrf_meta_tags
+    
+    = stylesheet_link_tag 'application', :media => 'all'
+
+  %body
+    .navbar.navbar-fluid-top
+      .navbar-inner
+        .container-fluid
+          = link_to 'Home Work Checker', '/', :class => :brand
+          .container.nav-collapse
+            %ul.nav
+              - if user_signed_in? 
+                %li
+                  = link_to current_user.email, ''
+                %li 
+                  = link_to 'Sign out', destroy_user_session_path
+              - else
+                %li
+                  = link_to 'Sign up', new_user_registration_path
+                %li
+                  = link_to 'Sign in', new_user_session_path
+
+    .container-fluid
+      .row-fluid
+        .span3
+          .well.sidebar-nav
+            %ul.nav.nav-list
+              %li.nav-header Main Menu
+              %li= link_to 'General Statistic', :controller => '/reports', :action => :index
+              %li= link_to 'Queue of archives', '/resque'
+              %li= link_to 'System log', :controller => '/reports', :action => :log, :id => 0
+        .span9
+          = bootstrap_flash
+          = yield
+    
+    #footer
+      %p &copy; SoftServe 2013
+
+
+    /after all loading
+    = javascript_include_tag 'application'
