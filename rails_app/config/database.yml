@@ -25,7 +25,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: auth_test
+  database: auth_development
   pool: 5
   username: root
   password:

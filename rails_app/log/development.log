@@ -82480,3 +82480,101 @@ Served asset /results.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-11 09:56:18 +0300
 Served asset /application.js - 304 Not Modified (21ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (81.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (18.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateStudents (20130529091028)
+  [1m[35m (11.9ms)[0m  CREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (4.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091028')[0m
+Migrating to CreateHomeworks (20130529091447)
+  [1m[35m (7.8ms)[0m  CREATE TABLE `homeworks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `language` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091447')[0m
+Migrating to CreateReports (20130529091845)
+  [1m[35m (20.1ms)[0m  CREATE TABLE `reports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `student_id` int(11), `homework_id` int(11), `ratio` float, `quality` float, `time` float, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130529091845')[0m
+Migrating to DeviseCreateUsers (20130530051123)
+  [1m[35m (5.5ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (27.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (28.4ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130530051123')[0m
+  [1m[35m (15.1ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (34.3ms)[0m  DROP DATABASE IF EXISTS `auth_development`
+  [1m[36m (19.1ms)[0m  [1mCREATE DATABASE `auth_development` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (5.9ms)[0m  CREATE TABLE `homeworks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `language` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (17.2ms)[0m  [1mCREATE TABLE `reports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `student_id` int(11), `homework_id` int(11), `ratio` float, `quality` float, `time` float, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE `students` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (10.4ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36m (10.8ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35m (10.2ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (13.6ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20130530051123')[0m
+  [1m[35m (2.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130529091845')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20130529091447')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130529091028')
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-11 21:35:30 +0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (2.5ms)
+Compiled jquery.ui.core.css  (2ms)  (pid 8148)
+Compiled jquery.ui.theme.css  (10ms)  (pid 8148)
+Compiled jquery.ui.datepicker.css  (4ms)  (pid 8148)
+Compiled dataTables/jquery.dataTables.bootstrap.css  (67ms)  (pid 8148)
+Compiled dataTables/extras/TableTools.css  (0ms)  (pid 8148)
+Compiled dataTables/extras/TableTools_JUI.css  (0ms)  (pid 8148)
+Compiled dataTables/src/demo_table_jui.css  (0ms)  (pid 8148)
+Compiled bootstrap-responsive.css  (0ms)  (pid 8148)
+Compiled bootstrap-responsive.min.css  (0ms)  (pid 8148)
+Compiled bootstrap.css  (0ms)  (pid 8148)
+Compiled bootstrap.min.css  (44ms)  (pid 8148)
+Compiled twitter-bootstrap-static/bootstrap.css  (44ms)  (pid 8148)
+Compiled twitter-bootstrap-static/fontawesome.css  (18ms)  (pid 8148)
+Compiled bootstrap_and_overrides.css  (198ms)  (pid 8148)
+Compiled scaffolds.css  (10ms)  (pid 8148)
+Compiled application.css  (422ms)  (pid 8148)
+Completed 500 Internal Server Error in 613ms
+
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0xa3f1aec>:0xa3fd518>):
+    14:           = link_to 'Home Work Checker', '/', :class => :brand
+    15:           .container.nav-collapse
+    16:             %ul.nav
+    17:               - if user_signed_in? 
+    18:                 %li
+    19:                   = link_to current_user.email, ''
+    20:                 %li 
+  app/views/layouts/application.html.haml:17:in `_app_views_layouts_application_html_haml__403346554_86347680'
+
+
+  Rendered /home/andriy/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/andriy/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/andriy/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-11 21:36:06 +0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.haml within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 85ms
+
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0xa3f1aec>:0xa890774>):
+    14:           = link_to 'Home Work Checker', '/', :class => :brand
+    15:           .container.nav-collapse
+    16:             %ul.nav
+    17:               - if user_signed_in? 
+    18:                 %li
+    19:                   = link_to current_user.email, ''
+    20:                 %li 
+  app/views/layouts/application.html.haml:17:in `_app_views_layouts_application_html_haml__403346554_86347680'
+
+
+  Rendered /home/andriy/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/andriy/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/andriy/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
