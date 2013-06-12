@@ -44,23 +44,24 @@ describe Report do
       r.homework_id.should == 1002
       r.student_id.should == 1001
       r.ratio.should == 0.0
-      r.quality == 67.23
-      r.time == 1.23
+      r.quality.should == 28.57
+      r.time.should == 1.3
 
     end
 
-    describe ".home_work_check"
+    describe ".home_work_check" do
       before(:each) do
         ResqueSpec.reset!
-        @res_path = "../spec/models"
+        @res_path = File.expand_path("spec/models")
         @checker = Report.home_work_check
       end
-    it "puts files into Resque queue"
+    it "puts files into Resque queue"do
       double(HomeWorkChecker::FileScan.new(@res_path, '/tmp')).stub(:each)
-        and_yield( 'julia.tymo_creational.patterns','.7z')
-        Resque.enqueue(ArchiveChecker, @res_path, '/tmp', name, type)
-      
+        .and_yield(Resque.enqueue(ArchiveChecker, @res_path, '/tmp', 'julia.tymo_creational.patterns','.7z'))
+      ArchiveChecker.should have_queued(@res_path, '/tmp', 'julia.tymo_creational.patterns','.7z').in(:archive_checker)
       ArchiveChecker.should have_queue_size_of(1)
+    end
+  end
   # it { should validate_uniqueness_of(:title) }
   # it { should validate_uniqueness_of(:title).scoped_to(:user_id, :category_id) }
   # it { should validate_presence_of(:body).with_message(/wtf/) }

@@ -3,7 +3,6 @@
 FactoryGirl.define do
   factory :homework do
     title "MyString"
-    language "MyString"
-    description "MyText"
+    language "ruby"
   end
 end
