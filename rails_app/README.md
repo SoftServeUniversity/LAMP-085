@@ -1,10 +1,7 @@
-LAMP-085
-========
-
-# HOME WORK CHECKER
-Is a Rails application for automatic home works checking jobs, 
-based on Resque
-Suport ruby and python language
+# Turbo Fenix 3000
+  Is a Rails application for automatic home works checking jobs, 
+  based on Resque
+  Suport ruby and python language
 ## Instalation 
 **Install redis**
 ```bash
@@ -30,4 +27,4 @@ $ sudo apt-get install pylint
 ```
 ## Using
 Download Rails application and run `$ bundle install`
-All archives with home works must be puted in `app/received` directory
+All archives with home works must be puted in `app/reseived` directory
