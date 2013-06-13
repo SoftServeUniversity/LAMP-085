@@ -1,7 +1,11 @@
 Auth::Application.routes.draw do
   
-  resources :reports
-  get 'reports/:id/system_log' => 'reports#log'
+  resources :reports do 
+    collection do 
+      get 'system_log' => 'reports#log'
+      post 'system_log' => 'reports#download'
+    end 
+  end
 
   get 'welcome/index'
 

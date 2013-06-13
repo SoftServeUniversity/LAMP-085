@@ -1,7 +1,22 @@
 class Report < ActiveRecord::Base
   WORK_PATH = File.expand_path('app/received')
+  LOG_PATH = File.expand_path('log')
   ARCHIVE_PASSED = ' have successfully processed'
-  ARCHIVE_FAILED = ' have failed. Something went wrong' 
+  ARCHIVE_FAILED = ' have failed. Something went wrong'
+  MONTHS_LIST = {
+    '01' => 'January',
+    '02' => 'February',
+    '03' => 'March',
+    '04' => 'April',
+    '05' => 'May',
+    '06' => 'June',
+    '07' => 'Jule',
+    '08' => 'August',
+    '09' => 'September',
+    '10' => 'October',
+    '11' => 'November',
+    '12' => 'December'
+  } 
 
   attr_accessible :homework_id, :quality, :ratio, :student_id, :time
   belongs_to :student
@@ -22,7 +37,8 @@ class Report < ActiveRecord::Base
         Resque.enqueue(ArchiveChecker, WORK_PATH, '/tmp', name, type)
       end
     rescue HomeWorkChecker::DirectoryExistError => error
-      OwnLogger::HomeWorkChecker.new.add_line(error.message)
+      logger = OwnLogger::HomeWorkChecker.new(LOG_PATH)
+      logger.add_line(error.message)
     end
   end
 
@@ -50,9 +66,15 @@ class Report < ActiveRecord::Base
     ).valid?
   end
 
+  def self.find_files_to_download
+    logger = OwnLogger::HomeWorkChecker.new(LOG_PATH)
+    logger.find_files_to_download
+  end
+
   def self.compress_log_files
-    year_prev = Time.now.to_s.first(4).to_i
-    OwnLogger::HomeWorkChecker.new.compress_files(year_prev)
+    year_prev = Time.now.to_s[0..3].to_i
+    logger = OwnLogger::HomeWorkChecker.new(LOG_PATH)
+    logger.compress_files(year_prev)
   end
 
   private

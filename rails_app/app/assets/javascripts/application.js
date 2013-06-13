@@ -20,3 +20,17 @@
 //
 //= require_tree .
 
+$(document).ready(function() {
+  $('#select-month').attr('disabled', true)
+
+  $('#select-year').click(function() {
+    currentYear = (new Date).getUTCFullYear()
+    if ($(this).val() == currentYear){
+      $('#select-month').attr('disabled', false)      
+    }
+    else {
+      $('#select-month').attr('disabled', true) 
+    }
+  })
+});
+

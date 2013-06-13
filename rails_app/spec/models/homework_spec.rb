@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Homework do
     before (:each) do
-    xml_file = File.expand_path("julia.tymo_creational.patterns-result.xml")
+    xml_file = File.expand_path("spec/support/julia.tymo_creational.patterns-result.xml")
     @xml_data = Report.send( :xml_file_to_hash, xml_file) 
     end
   it { should have_many :reports }

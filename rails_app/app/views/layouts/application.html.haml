@@ -33,7 +33,7 @@
               %li.nav-header Main Menu
               %li= link_to 'General Statistic', :controller => '/reports', :action => :index
               %li= link_to 'Queue of archives', '/resque'
-              %li= link_to 'System log', :controller => '/reports', :action => :log, :id => 0
+              %li= link_to 'System log', :controller => '/reports', :action => :log
         .span9
           = bootstrap_flash
           = yield

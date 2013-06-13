@@ -19,7 +19,7 @@ describe Report do
   let(:report) { }
   describe ".add_record"
     before (:each) do
-      @res_file = File.expand_path("spec/models/julia.tymo_creational.patterns-result.xml")
+      @res_file = File.expand_path("spec/support/julia.tymo_creational.patterns-result.xml")
     end
 
     it "store data from xml-file to database" do
@@ -52,7 +52,7 @@ describe Report do
     describe ".home_work_check" do
       before(:each) do
         ResqueSpec.reset!
-        @res_path = File.expand_path("spec/models")
+        @res_path = File.expand_path("spec/support")
         @checker = Report.home_work_check
       end
     it "puts files into Resque queue"do
@@ -69,4 +69,3 @@ describe Report do
   # it { should validate_numericality_of(:user_id) }
   # it { should ensure_inclusion_of(:status).in_array(['draft', 'public']) }
 end
-

@@ -1,2 +1,21 @@
-%h1 Reports#log
-%p Find me in app/views/reports/log.html.haml
+%h2 System Log
+
+= form_tag nil, :class => 'form-horizontal' do
+
+  - if flash[:wrong] 
+    %div{ :class => "alert alert-error" }
+      = flash[:wrong] 
+
+  .control-group
+    = label_tag :year, nil, :class => 'control-label'
+    .controls
+      = select_tag :year, options_for_select(@years), :prompt => 'Please select', :class => 'select', :id => 'select-year'
+
+  .control-group
+    = label_tag :month, nil, :class => 'control-label'
+    .controls
+      = select_tag :month, options_for_select(@months), :prompt => 'Please select', :class => 'select', :id => 'select-month'
+
+  .form-actions
+    = submit_tag 'Download file', :class => 'btn btn-primary'
+    = link_to 'Cancel', reports_path, :class => 'btn'
