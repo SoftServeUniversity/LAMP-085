@@ -1,7 +1,7 @@
 LAMP-085
 ========
 
-Ruby app to check homework
+# HOME WORK CHECKER
 Is a Rails application for automatic home works checking jobs, 
 based on Resque
 Suport ruby and python language
@@ -30,4 +30,4 @@ $ sudo apt-get install pylint
 ```
 ## Using
 Download Rails application and run `$ bundle install`
-All archives with home works must be puted in `app/reseived` directory
+All archives with home works must be puted in `app/received` directory
