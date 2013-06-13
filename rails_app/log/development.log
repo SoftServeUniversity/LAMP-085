@@ -83006,3 +83006,7 @@ DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove 
   [1m[35m (2.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130529091447')
   [1m[36m (2.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20130529091845')[0m
   [1m[35m (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20130529091028')
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/jazu4nuk/coding/LAMP-085/rails_app/config/routes.rb:9)
+Connecting to database specified by database.yml
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /home/jazu4nuk/coding/LAMP-085/rails_app/config/routes.rb:9)

@@ -44,7 +44,7 @@ group :test do
 end
 
 gem 'jquery-rails'
-
+gem "highcharts-rails"
 # To use HAML instead of inconvenient ERB
 gem 'haml-rails'
 

@@ -17,6 +17,8 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require dataTables/extras/TableTools
-//
+//= require highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/themes/grid
 //= require_tree .
 
