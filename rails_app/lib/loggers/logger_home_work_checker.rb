@@ -28,11 +28,11 @@ module OwnLogger
 
     def compress_files(year)
       log_files = find_files_to_compress(year).join(' ')
-      %x|'7z a "#{@path}/home_work_check_#{year}.7z #{log_files}"|
-      log_files.split(' ').each { |f| %x|rm "#{f}"| }
+      return if log_files == ''
+      %x|7z a #{@path}/home_work_check_#{year}.7z #{log_files}|
+      log_files.split(' ').each { |f| %x|rm #{f}| }
     end
 
-    private
     def find_files_to_compress(year)
       pattern, files = /^home_work_check_#{year}-\d{2}.log$/i, []
       Dir.foreach(@path) do |p|
