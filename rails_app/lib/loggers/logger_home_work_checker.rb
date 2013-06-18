@@ -33,6 +33,7 @@ module OwnLogger
       log_files.split(' ').each { |f| %x|rm #{f}| }
     end
 
+    private
     def find_files_to_compress(year)
       pattern, files = /^home_work_check_#{year}-\d{2}.log$/i, []
       Dir.foreach(@path) do |p|

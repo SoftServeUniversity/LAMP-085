@@ -4,6 +4,7 @@ class ReportsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @reports = Report.all
+    Report.home_work_check
     # binding.pry
   end
 
