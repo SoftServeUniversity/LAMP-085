@@ -1,11 +1,12 @@
 module HomeWorkChecker
   class FileScan
-    def initialize(work_path, tmp_path = '/tmp')
-      raise DirectoryExistError, "Directory '#{work_path}' does not exist" unless Dir::exist?(work_path)
+    def initialize(archive_path, result_path, tmp_path = '/tmp')
+      raise DirectoryExistError, "Directory '#{archive_path}' does not exist" unless Dir::exist?(archive_path)
+      raise DirectoryExistError, "Directory '#{result_path}' does not exist" unless Dir::exist?(result_path)
       raise DirectoryExistError, "Directory '#{tmp_path}' does not exist" unless Dir::exist?(tmp_path)
-      @work_path, @tmp_path, @files = work_path, tmp_path, []
-      Dir.foreach(@work_path) do |p|
-        if File.file?("#{@work_path}/#{p}") && FILE_TYPES.include?(File.extname p) && !exist_xml?(p)
+      @archive_path, @result_path, @tmp_path, @files = archive_path, result_path, tmp_path, []
+      Dir.foreach(@archive_path) do |p|
+        if File.file?("#{archive_path}/#{p}") && ARCHIVE_TYPES.include?(File.extname p) && !exist_xml?(p)
           @files << p
         end
       end
@@ -26,8 +27,8 @@ module HomeWorkChecker
 
     private
     def exist_xml?(archive_name)
-      temp = archive_name.chomp(File.extname archive_name)
-      File.exist? "#{@work_path}/#{temp}-result.xml"
+      name = archive_name.chomp(File.extname archive_name)
+      File.exist? "#{@result_path}/#{name}.xml"
     end 
   end
 end

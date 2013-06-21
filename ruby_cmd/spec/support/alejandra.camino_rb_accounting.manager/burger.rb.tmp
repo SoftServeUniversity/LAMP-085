@@ -1,0 +1,12 @@
+== /home/ppetr/repos/hw_checker/ruby_cmd/spec/support/alejandra.camino_rb_accounting.manager/burger.rb ==
+C:  1: Missing utf-8 encoding comment.
+C:  3: Trailing whitespace detected.
+C:  4: Surrounding space missing in default value assignment.
+C:  7: Trailing whitespace detected.
+C:  8: Trailing whitespace detected.
+C: 12: Trailing whitespace detected.
+C: 13: Use attr_reader to define trivial reader methods.
+C: 17: Space missing after comma.
+C: 19: Surrounding space missing for operator '+'.
+
+1 file inspected, 9 offences detected

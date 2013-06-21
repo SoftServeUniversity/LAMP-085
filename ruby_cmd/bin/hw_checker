@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/hw_checker'
+require File.expand_path './lib/hw_checker'
 
 begin
-  HomeWorkChecker::FileScan.new(ARGV[0], '/tmp').each do |name, type|
-    HomeWorkChecker::Base.start(ARGV[0], '/tmp', name, type)
+  HomeWorkChecker::FileScan.new(ARGV[0], ARGV[1]).each do |name, type|
+    HomeWorkChecker::Base.start(ARGV[0], ARGV[1], name, type)
   end
-rescue HomeWorkChecker::DirectoryExistError => error
+rescue HomeWorkChecker::DirectoryExistError, HomeWorkChecker::DirectoryFormatError, RuntimeError => error
   puts error.message, error.backtrace
 end

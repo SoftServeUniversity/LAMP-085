@@ -1,0 +1,12 @@
+#
+# List of used languages is defined here
+#
+languages:
+  rb: ruby
+  py: python
+
+modules:
+  ruby:   HomeWorkChecker::ArchiveResult::RubyTestRun HomeWorkChecker::ArchiveResult::RubyCodeQuality
+  python: HomeWorkChecker::ArchiveResult::PythonTestRun HomeWorkChecker::ArchiveResult::PythonCodeQuality
+
+archives: .zip .7z

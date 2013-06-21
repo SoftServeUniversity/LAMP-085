@@ -1,6 +1,6 @@
 module HomeWorkChecker
-  module TestRunStat
-    class PythonTestRun
+  module ArchiveResult
+    class PythonTestRun < TestRun
       def initialize(tmp_path, dirname)
         @work_path = "#{tmp_path}/#{dirname}/tests/application"
         raise DirectoryExistError, "Archive '#{dirname}' is invalid" unless Dir::exist?(@work_path)
