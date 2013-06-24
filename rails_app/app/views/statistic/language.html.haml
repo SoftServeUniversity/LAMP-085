@@ -1,2 +1,18 @@
-%h3 Statistic#language
-%p Find me in app/views/statistic/language.html.haml
+%script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
+:javascript
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ["Language Type", "Count"], 
+      ["python", #{@reports_py}], 
+      ["ruby", #{@reports_rb}]
+    ]);
+
+    var options = {
+      title: 'Statistic to language'
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+#chart_div{:style => "width: 900px; height: 500px;"}

@@ -1,2 +1,23 @@
-%h3 Statistic#time
-%p Find me in app/views/statistic/time.html.haml
+%h4 Statistic to Time, Ratio, Quality from tests
+%script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
+:javascript
+  google.load('visualization', '1', {'packages':['annotatedtimeline']});
+  google.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('date', 'Date');
+    data.addColumn('number', 'time (s): ');
+    data.addColumn('number', 'ratio (%): ');
+    data.addColumn('number', 'quality (%): ');
+    for (var i=0; i < #{@date_ye.length} ; i++)
+    {
+      data.addRows([
+        [new Date(#{@date_ye}[i], #{@date_mo}[i], #{@date_da}[i], #{@date_ho}[i], #{@date_mi}[i], #{@date_se}[i]), #{@time}[i], #{@ratio}[i], #{@quality}[i]]
+      ]);
+    }
+
+    var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
+    chart.draw(data, {displayAnnotations: true});
+  }
+#chart_div{:style => "width: 700px; height: 300px;"}
