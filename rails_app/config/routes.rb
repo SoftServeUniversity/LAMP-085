@@ -1,13 +1,27 @@
 Auth::Application.routes.draw do
-  
-  resources :reports do 
-    collection do 
-      get 'system_log' => 'reports#log'
-      post 'system_log' => 'reports#download'
-    end 
+
+  resources :reports do
+    collection do
+      get 'reports/check_homework' => 'reports#check'
+    end
   end
 
-  get 'welcome/index'
+  controller :logger do
+    get 'logger' => :index
+    post 'logger' =>  :load
+  end
+
+  controller :statistic do
+    get 'statistic/language' => :language
+    get 'statistic/time' => :time
+  end
+
+  controller :support do
+    get 'support/database_restore' => :index
+    post 'support/database_restore' => :restore
+    get 'support/database_back_up' => :back_up
+    get 'support/destroy' => :destroy
+  end
 
   # devise_for :users
   devise_for :users do
@@ -16,5 +30,5 @@ Auth::Application.routes.draw do
 
   mount Resque::Server, :at => "/resque"
   
-  root :to => "welcome#index"
+  root :to => "reports#index"
 end

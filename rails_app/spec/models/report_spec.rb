@@ -50,11 +50,11 @@ describe Report do
 
     end
 
-    describe ".home_work_check" do
+    describe ".homework_check" do
       before(:each) do
         ResqueSpec.reset!
         @res_path = File.expand_path("app/received")
-        @checker = Report.home_work_check
+        @checker = Report.homework_check
         @logger = OwnLogger::HomeWorkChecker.new File.expand_path('log')
       end
       context "when all is fine" do
@@ -66,7 +66,7 @@ describe Report do
             '/tmp', 
             'julia.tymo_creational.patterns',
             '.7z').once
-          Report.home_work_check
+          Report.homework_check
           ArchiveChecker.should have_queued(@res_path, '/tmp', 'julia.tymo_creational.patterns','.7z').in(:archive_checker)
           ArchiveChecker.should have_queue_size_of(1)
         end
@@ -82,7 +82,7 @@ describe Report do
           # @logger.should_receive(:add_line).once
           scan = double(HomeWorkChecker::FileScan)
           scan.stub(:new).and_raise(HomeWorkChecker::DirectoryExistError)
-          Report.home_work_check
+          Report.homework_check
         end
       end
 

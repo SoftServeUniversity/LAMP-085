@@ -1,5 +1,6 @@
 class Report < ActiveRecord::Base
-  WORK_PATH = File.expand_path('app/received')
+  ARCHIVE_PATH = File.expand_path('~/Desktop/hwc_archives')
+  RESULT_PATH = File.expand_path('~/Desktop/hwc_results')
   LOG_PATH = File.expand_path('log')
   ARCHIVE_PASSED = ' have successfully processed'
   ARCHIVE_FAILED = ' have failed. Something went wrong'
@@ -31,12 +32,12 @@ class Report < ActiveRecord::Base
   validates_numericality_of :time, greater_than: 0.00
 
 
-  def self.home_work_check
+  def self.homework_check
     begin
-      HomeWorkChecker::FileScan.new(WORK_PATH, '/tmp').each do |name, type|
-        Resque.enqueue(ArchiveChecker, WORK_PATH, '/tmp', name, type)
+      HomeWorkChecker::FileScan.new(ARCHIVE_PATH, RESULT_PATH).each do |name, type|
+        Resque.enqueue(ArchiveChecker, ARCHIVE_PATH, RESULT_PATH, name, type)
       end
-    rescue HomeWorkChecker::DirectoryExistError => error
+    rescue HomeWorkChecker::DirectoryExistError, HomeWorkChecker::DirectoryFormatError, RuntimeError => error
       logger = OwnLogger::HomeWorkChecker.new(LOG_PATH)
       logger.add_line(error.message)
     end
@@ -52,7 +53,9 @@ class Report < ActiveRecord::Base
 
   def self.add_record(fn)
     xml_content = xml_file_to_hash(fn)
-    s = Student.where(name: xml_content[:student]).first_or_create
+    s = Student.where(
+      name: xml_content[:student]
+    ).first_or_create
     h = Homework.where(
       title: xml_content[:homework],
       language: xml_content[:language]

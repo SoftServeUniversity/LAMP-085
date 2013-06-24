@@ -1,8 +1,8 @@
 !!! 5
 %html(lang="en")
   %head
-    %meta{:charset => 'utf-8', :http_equiv => 'X-UA-Compatible', :content => 'IE=Edge,chrome=1', :name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
-    %title= content_for?(:title) ? yield(:title) : 'Hw::Checker'
+    %meta{:charset => 'utf-8', 'http-equiv' => 'X-UA-Compatible', :content => 'IE=Edge,chrome=1', :name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+    %title= content_for?(:title) ? yield(:title) : 'HWC'
     = csrf_meta_tags
     
     = stylesheet_link_tag 'application', :media => 'all'
@@ -14,9 +14,22 @@
           = link_to 'Home Work Checker', '/', :class => :brand
           .container.nav-collapse
             %ul.nav
-              - if user_signed_in? 
+              - if user_signed_in?
                 %li
-                  = link_to current_user.email, ''
+                  .btn-group
+                    %a{ :class => 'btn dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#'}
+                      Actions
+                      %span.caret
+                    %ul{ :class => 'dropdown-menu'}
+                      %li
+                        =link_to 'Back up database', support_database_back_up_path
+                      %li
+                        =link_to 'Clear students & homeworks', support_destroy_path
+                      %li{ :class => 'divider'}
+                      %li
+                        =link_to 'Check homeworks', :controller => :reports, :action => :check
+                %li
+                  = link_to current_user.email, reports_path
                 %li 
                   = link_to 'Sign out', destroy_user_session_path
               - else
@@ -31,16 +44,21 @@
           .well.sidebar-nav
             %ul.nav.nav-list
               %li.nav-header Main Menu
-              %li= link_to 'General Statistic', :controller => '/reports', :action => :index
-              %li= link_to 'Queue of archives', '/resque'
-              %li= link_to 'System log', :controller => '/reports', :action => :log
+              %li= link_to 'Results Overview', reports_path
+              %li= link_to 'Queue of Archives', resque_server_path
+              %li= link_to 'Language Statistic', statistic_language_path
+              %li= link_to 'Time Statistic', statistic_time_path
+              %li= link_to 'Logger', logger_path
+              %li= link_to 'Restore Database', support_database_restore_path
         .span9
           = bootstrap_flash
           = yield
     
-    #footer
+    %div{ :class => 'navbar navbar-fixed-bottom text-center' }
       %p &copy; SoftServe 2013
 
 
-    /after all loading
+    /when everything is loaded
     = javascript_include_tag 'application'
+
+  

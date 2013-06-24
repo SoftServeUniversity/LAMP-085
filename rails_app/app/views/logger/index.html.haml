@@ -1,10 +1,6 @@
-%h2 System Log
+%h3 Logger
 
 = form_tag nil, :class => 'form-horizontal' do
-
-  - if flash[:wrong] 
-    %div{ :class => "alert alert-error" }
-      = flash[:wrong] 
 
   .control-group
     = label_tag :year, nil, :class => 'control-label'
@@ -17,5 +13,5 @@
       = select_tag :month, options_for_select(@months), :prompt => 'Please select', :class => 'select', :id => 'select-month'
 
   .form-actions
-    = submit_tag 'Download file', :class => 'btn btn-primary'
+    = submit_tag 'Download log', :class => 'btn btn-primary'
     = link_to 'Cancel', reports_path, :class => 'btn'
