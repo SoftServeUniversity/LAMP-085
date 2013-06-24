@@ -260,26 +260,26 @@ vendor
   subdirectory. If the app has frozen rails, those gems also go here, under
   vendor/rails/. This directory is in the load path.
 
-====================================
-Ruby 1.9.3 on Heroku
-====================================
+
+== dbconsoleRuby 1.9.3 on Heroku
+
 Heroku’s newest stack, “Celadon Cedar,” supports Ruby 1.9.3 and Rails 3.2. As of 9 May 2012, Heroku officially supports Ruby 1.9.3 (see Multiple Ruby Version Support on Heroku).
 
 First, update to the newest version of Rubygems-Bundler:
 
-$ rvm gemset use global
+<tt>$ rvm gemset use global
 $ gem update rubygems-bundler
-$ gem list
+$ gem list</tt>
 
 Update to the newest version of Bundler:
 
-$ rvm gemset use global
+<tt>$ rvm gemset use global
 $ gem update bundler
-$ gem list
+$ gem list</tt>
 
 
-Install Heroku Gem
-$  gem install heroku
+<tt>Install Heroku Gem
+$  gem install heroku</tt>
 
 Use PostgreSQL gem in Gemfile for Heroku
 If you’d like to use PostgreSQL both locally and on Heroku for production, edit your Gemfile and change this line:
@@ -287,25 +287,25 @@ gem 'mysql'
 To this:
 gem 'pg'
 Install your gems with:
-$ bundle install
+<tt>$ bundle install</tt>
 
 Heroku doesn’t check files in the config/initializers folder before attempting to precompile assets. That’s fine if you precompile assets before deploying to Heroku. Or if you don’t use the initializer files to set constants that are used in the assets files. You can avoid these issues by adding this configuration parameter to the config/application.rb file:
 # Heroku requires this to be false
 config.assets.initialize_on_precompile=false
 
 To precompile assets before deployment to Heroku:
-$rake assets:precompile
+<tt>$rake assets:precompile</tt>
 
 Git Initialize
-$ git init
+<tt>$ git init</tt>
 
 Git Add
-$ git add .
+<tt>$ git add .</tt>
 
 Commit to Git
 Your application must be committed to a Git repository before you can use Heroku. See Git and Rails to learn how to set up Git for your application.
 Store the modified application in the Git repository:
-$ git commit -am "Configured for deployment to Heroku"
+<tt>$ git commit -am "Configured for deployment to Heroku"</tt>
 
 Heroku Account
 To deploy an app to Heroku, you must have a Heroku account. Visit http://heroku.com/ to set up an account. Heroku will ask you for your email address; it’s advisable to use the same email address you use for your GitHub account (see the article Git and Rails).
@@ -321,18 +321,18 @@ To install the heroku-accounts plugin:
 heroku plugins:install git://github.com/ddollar/heroku-accounts.git
 To add an account locally (which you’ll call “work”):
 
-$ heroku accounts:add work --auto
+<tt>$ heroku accounts:add work --auto</tt>
 To list accounts that are set up locally:
 
-$ heroku accounts
+<tt>$ heroku accounts</tt>
 To set an account to use for a project:
 
 # in project root
-heroku accounts:set work
+<tt>$heroku accounts:set work</tt>
 Create Your Application on Heroku
 Use the Heroku create command to create and name your new app.
 
-$ heroku create myapp
+<tt>$ heroku create myapp</tt>
 
 Replace myapp with something unique. Heroku demands a unique name for every hosted application. If it is not unique, you’ll see an error, “name is already taken.”
 
@@ -348,36 +348,35 @@ Your application may be obtaining usernames, passwords, or API keys for external
 Push Your Application to Heroku
 Push your application to Heroku:
 
-$ git push heroku master
+<tt>$ git push heroku master</tt>
 
 Database Migrations
 You’ll need to run your database migrations:
 
-$ heroku run rake db:migrate
+<tt>$ heroku run rake db:migrate</tt>
 
 Don’t forget to restart your application or you won’t see any changes:
 
-$ heroku restart
+<tt>$ heroku restart</tt>
 
 Visit Your Site
 Open your Heroku site in your default web browser:
 
-$ heroku open
+<tt>$ heroku open</tt>
 
 Your app will be running at http://my-app-name.herokuapp.com/.
 
-====================================
-Ruby 1.9.3 on NGINX
-====================================
+== Ruby 1.9.3 on NGINX
+
 Install the passenger gem:
 $gem install passenger
 
 Use this command to start the nginx installation:
-$passenger-install-apache2-module
+<tt>$passenger-install-apache2-module</tt>
 
 Configure your rails app to work with nginx/passenger
 Open nginx.conf to configure nginx
-$sudo nono /opt/nginx/conf/nginx.conf
+<tt>$sudo nono /opt/nginx/conf/nginx.conf</tt>
 
 
 You will then need to add a server block looking similar to this:
@@ -389,7 +388,7 @@ You will then need to add a server block looking similar to this:
 	}
 	
 Restart nginx once again
-$ passenger start
+<tt>$ passenger start</tt>
 
 Your site will be accesible via: http://0.0.0.0:3000
 
