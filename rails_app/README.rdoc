@@ -5,17 +5,22 @@ Heroku’s newest stack, “Celadon Cedar,” supports Ruby 1.9.3 and Rails 3.2.
 First, update to the newest version of Rubygems-Bundler:
 
 <tt>$ rvm gemset use global</tt>
+
 <tt>$ gem update rubygems-bundler</tt>
+
 <tt>$ gem list</tt>
 
 Update to the newest version of Bundler:
 
 <tt>$ rvm gemset use global</tt>
+
 <tt>$ gem update bundler</tt>
+
 <tt>$ gem list</tt>
 
 
 Install Heroku Gem
+
 <tt>$  gem install heroku</tt>
 
 Use PostgreSQL gem in Gemfile for Heroku
@@ -24,6 +29,7 @@ gem 'mysql'
 To this:
 gem 'pg'
 Install your gems with:
+
 <tt>$ bundle install</tt>
 
 Heroku doesn’t check files in the config/initializers folder before attempting to precompile assets. That’s fine if you precompile assets before deploying to Heroku. Or if you don’t use the initializer files to set constants that are used in the assets files. You can avoid these issues by adding this configuration parameter to the config/application.rb file:
@@ -31,17 +37,22 @@ Heroku doesn’t check files in the config/initializers folder before attempting
 config.assets.initialize_on_precompile=false
 
 To precompile assets before deployment to Heroku:
+
 <tt>$rake assets:precompile</tt>
 
 Git Initialize
+
 <tt>$ git init</tt>
 
 Git Add
+
 <tt>$ git add .</tt>
 
 Commit to Git
 Your application must be committed to a Git repository before you can use Heroku. See Git and Rails to learn how to set up Git for your application.
+
 Store the modified application in the Git repository:
+
 <tt>$ git commit -am "Configured for deployment to Heroku"</tt>
 
 Heroku Account
@@ -55,17 +66,21 @@ David Dollar’s heroku-accounts plugin will help if you must use multiple accou
 
 To install the heroku-accounts plugin:
 
-heroku plugins:install git://github.com/ddollar/heroku-accounts.git
+<tt>$ heroku plugins:install git://github.com/ddollar/heroku-accounts.git</tt>
 To add an account locally (which you’ll call “work”):
 
 <tt>$ heroku accounts:add work --auto</tt>
+
 To list accounts that are set up locally:
 
 <tt>$ heroku accounts</tt>
+
 To set an account to use for a project:
 
 # in project root
+
 <tt>$heroku accounts:set work</tt>
+
 Create Your Application on Heroku
 Use the Heroku create command to create and name your new app.
 
@@ -106,7 +121,8 @@ Your app will be running at http://my-app-name.herokuapp.com/.
 == Ruby 1.9.3 on NGINX
 
 Install the passenger gem:
-$gem install passenger
+
+<tt>$gem install passenger</tt>
 
 Use this command to start the nginx installation:
 
