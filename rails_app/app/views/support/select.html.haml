@@ -1,0 +1,16 @@
+%h3 Select Backup
+
+= form_tag nil, :class => 'form-horizontal' do
+
+  - if flash[:wrong] 
+    %div{ :class => "alert alert-error" }
+      = flash[:wrong] 
+
+  .control-group
+    = label_tag :select_file, nil, :class => 'control-label'
+    .controls
+      = select_tag :select_file, options_for_select(@file_name), :prompt => 'Please select', :class => 'select', :id => 'select-file'
+
+  .form-actions
+    = submit_tag 'Restore backup', :class => 'btn btn-primary'
+    = link_to 'Cancel', root_path, :class => 'btn'

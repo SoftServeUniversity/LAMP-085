@@ -17,11 +17,15 @@ Auth::Application.routes.draw do
   end
 
   controller :support do
-    get 'support/database_restore' => :index
+    get 'support/database_restore' => :select
     post 'support/database_restore' => :restore
     get 'support/database_back_up' => :back_up
-    get 'support/destroy' => :destroy
+    get 'support/destroy' => :destroy   
   end
+
+      
+      
+   
 
   # devise_for :users
   devise_for :users do

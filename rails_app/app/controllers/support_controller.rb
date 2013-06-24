@@ -4,13 +4,25 @@ class SupportController < ApplicationController
   def index
   end
 
+  def select
+    base_path = Rails.root
+    base_path = File.join(base_path, ENV["DIR"] || "backups")
+    backup_base = File.join(base_path, 'db_backups')
+    dir = Dir.new(backup_base)
+    @file_name = dir.entries
+  end
+
   def restore
     flash[:info] = 'Restoring database was added to queue'
+    @file_name = params[:select_file]
+    %x|FILE="#{@file_name}" rake db:restore|
+    BackupNotifier.restore_email(current_user).deliver
     redirect_to root_path
   end
 
   def back_up
     flash[:info] = 'Backing up database was added to queue'
+    Resque.enqueue(DBBackup,current_user)
     redirect_to root_path
   end
 
