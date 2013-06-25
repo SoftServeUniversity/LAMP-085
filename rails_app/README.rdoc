@@ -67,6 +67,7 @@ David Dollar’s heroku-accounts plugin will help if you must use multiple accou
 To install the heroku-accounts plugin:
 
 <tt>$ heroku plugins:install git://github.com/ddollar/heroku-accounts.git</tt>
+
 To add an account locally (which you’ll call “work”):
 
 <tt>$ heroku accounts:add work --auto</tt>
@@ -118,7 +119,7 @@ Open your Heroku site in your default web browser:
 
 Your app will be running at http://my-app-name.herokuapp.com/.
 
-== Ruby 1.9.3 on NGINX
+== Ruby 1.9.3 project on NGINX
 
 Install the passenger gem:
 
@@ -126,7 +127,7 @@ Install the passenger gem:
 
 Use this command to start the nginx installation:
 
-<tt>$passenger-install-apache2-module</tt>
+<tt>$passenger-install-nginx-module</tt>
 
 Configure your rails app to work with nginx/passenger
 Open nginx.conf to configure nginx
@@ -135,10 +136,15 @@ Open nginx.conf to configure nginx
 
 
 You will then need to add a server block looking similar to this:
+
 	server {
+
 	listen 80;
+
 	server_name localhost;
+
 	root /rails_apps/myapplication/public;   # <--- be sure to point to 'public'!
+	
 	passenger_enabled on;
 	}
 	
