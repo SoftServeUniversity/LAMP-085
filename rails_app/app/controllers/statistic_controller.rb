@@ -2,18 +2,16 @@ class StatisticController < ApplicationController
   before_filter :authenticate_user!
   
   def language
-    # @language, @data = [], []
-    # Homework.all.each do |l|
-    #   unless @language.include?l.language
-    #     @language << l.language 
-    #   end
-    # end
-    # @data << ["Language Type", "Count"]
-    # @language.each do |lan|      
-    #   @data << [lan, Homework.where(:language => lan).count(:language)]
-    # end    
-    @reports_rb = Homework.where(:language => 'ruby').count(:language)
-    @reports_py = Homework.where(:language => 'python').count(:language)
+    @language, @data = [], []
+    Homework.all.each do |l|
+      unless @language.include?l.language
+        @language << l.language 
+      end
+    end
+    @data << ["Language Type", "Count"]
+    @language.each do |lan|      
+      @data << [lan, Homework.where(:language => lan).count(:language)]
+    end    
   end
 
   def time

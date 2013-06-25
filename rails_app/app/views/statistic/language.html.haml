@@ -3,11 +3,7 @@
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ["Language Type", "Count"], 
-      ["python", #{@reports_py}], 
-      ["ruby", #{@reports_rb}]
-    ]);
+    var data = google.visualization.arrayToDataTable(#{raw @data});
 
     var options = {
       title: 'Statistic to language'
