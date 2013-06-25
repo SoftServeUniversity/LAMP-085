@@ -1,7 +1,7 @@
 class Report < ActiveRecord::Base
-  ARCHIVE_PATH = File.expand_path('~/Desktop/hwc_archives')
-  RESULT_PATH = File.expand_path('~/Desktop/hwc_results')
-  LOG_PATH = File.expand_path('log')
+  ARCHIVE_PATH = Rails.root.to_s + '/support/hwc_archives'
+  RESULT_PATH = Rails.root.to_s + '/support/hwc_results'
+  LOG_PATH = Rails.root.to_s + '/log'
   ARCHIVE_PASSED = ' have successfully processed'
   ARCHIVE_FAILED = ' have failed. Something went wrong'
   MONTHS_LIST = {
