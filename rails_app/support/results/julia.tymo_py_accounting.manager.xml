@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <student>ann.devon</student>
-  <homework>sales.agent</homework>
+  <student>julia.tymo</student>
+  <homework>accounting.manager</homework>
   <language>python</language>
   <ratio>100.0</ratio>
   <quality>50.0</quality>
-  <time>0.4</time>
+  <time>0.47</time>
 </root>
