@@ -1,0 +1,5 @@
+#
+# All paths for hw_checker gem is defined here
+#
+archive_path: support/archives
+result_path:  support/results

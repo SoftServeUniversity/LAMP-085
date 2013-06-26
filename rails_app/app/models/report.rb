@@ -1,6 +1,5 @@
 class Report < ActiveRecord::Base
-  ARCHIVE_PATH = Rails.root.to_s + '/support/hwc_archives'
-  RESULT_PATH = Rails.root.to_s + '/support/hwc_results'
+  ARCHIVE_PATH, RESULT_PATH = YAML.load_file('config/path.yml').values
   LOG_PATH = Rails.root.to_s + '/log'
   ARCHIVE_PASSED = ' have successfully processed'
   ARCHIVE_FAILED = ' have failed. Something went wrong'
