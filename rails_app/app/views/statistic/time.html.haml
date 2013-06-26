@@ -1,5 +1,4 @@
-%h3 Time Statistic
-
+%h4 Statistic to Time, Ratio, Quality from teststs
 %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
 :javascript
   google.load('visualization', '1', {'packages':['annotatedtimeline']});
@@ -11,14 +10,14 @@
     data.addColumn('number', 'time (s): ');
     data.addColumn('number', 'ratio (%): ');
     data.addColumn('number', 'quality (%): ');
-    for (var i=0; i < #{@date_ye.length} ; i++)
+    for (var i=0; i < #{@date.length} ; i++)
     {
       data.addRows([
-        [new Date(#{@date_ye}[i], #{@date_mo}[i], #{@date_da}[i], #{@date_ho}[i], #{@date_mi}[i], #{@date_se}[i]), #{@time}[i], #{@ratio}[i], #{@quality}[i]]
+        [new Date(#{@date}[i][0], #{@date}[i][1], #{@date}[i][2], #{@date}[i][3], #{@date}[i][4], #{@date}[i][5]), #{@time}[i], #{@ratio}[i], #{@quality}[i]]
       ]);
     }
 
     var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('chart_div'));
     chart.draw(data, {displayAnnotations: true});
   }
-#chart_div{:style => "width: 700px; height: 300px;"}
+#chart_div{:style => "width: 700px; height: 350px;"}

@@ -15,20 +15,19 @@ class StatisticController < ApplicationController
   end
 
   def time
-    @ratio = []
-    @quality = []
-    @time = []
-    @ratio, @quality, @time, @date_ye, @date_mo, @date_da, @date_ho, @date_mi, @date_se = [], [], [], [], [], [], [], [], []
+    @date = []
+    @ratio, @quality, @time = [], [], []
     Report.all.each do |r|
       @ratio << r.ratio
       @quality << r.quality
       @time << r.time
-      @date_ye << r.updated_at.year
-      @date_mo << r.updated_at.mon-1
-      @date_da << r.updated_at.day
-      @date_ho << r.updated_at.hour
-      @date_mi << r.updated_at.min
-      @date_se << r.updated_at.sec
+      @date << [
+        r.updated_at.year,
+        r.updated_at.mon-1, 
+        r.updated_at.day, 
+        r.updated_at.hour, 
+        r.updated_at.min, 
+        r.updated_at.sec]
     end
   end
 end
