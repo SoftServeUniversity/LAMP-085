@@ -1,0 +1,37 @@
+== Ruby 1.9.3 project on NGINX
+
+Install the passenger gem:
+
+<tt>$gem install passenger</tt>
+
+Use this command to start the nginx installation:
+
+<tt>$passenger-install-nginx-module</tt>
+
+Configure your rails app to work with nginx/passenger
+Open nginx.conf to configure nginx
+
+<tt>$sudo nano /opt/nginx/conf/nginx.conf</tt>
+
+
+You will then need to add a server block looking similar to this:
+
+	server {
+
+	listen 80;
+
+	server_name localhost;
+
+	root /rails_apps/myapplication/public;   # <--- be sure to point to 'public'!
+		
+	passenger_enabled on;
+	}
+	
+Restart nginx once again
+
+<tt>$ passenger start</tt>
+
+Your site will be accesible via: http://0.0.0.0:3000
+
+
+
