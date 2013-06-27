@@ -2,7 +2,7 @@ Auth::Application.routes.draw do
 
   resources :reports do
     collection do
-      get 'reports/check_homework' => 'reports#check'
+      get 'check_homework' => 'reports#check'
     end
   end
 

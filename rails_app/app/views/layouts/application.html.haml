@@ -27,7 +27,7 @@
                         =link_to 'Clear students & homeworks', support_destroy_path
                       %li{ :class => 'divider'}
                       %li
-                        =link_to 'Check homeworks', :controller => :reports, :action => :check
+                        =link_to 'Check homeworks', check_homework_reports_path
                 %li
                   = link_to current_user.email, reports_path
                 %li 

@@ -1,0 +1,132 @@
+No config file found, using default configuration
+************* Module TestAnalyser
+C: 14: Line too long (81/80)
+C: 43: Line too long (110/80)
+C: 49: Line too long (95/80)
+W: 52: Unnecessary semicolon
+W: 58: Unnecessary semicolon
+F:  7: Unable to import 'statistic.analyser'
+C: 10:TestAnalyser: Missing docstring
+C: 12:TestAnalyser.setUp: Invalid name "setUp" (should match [a-z_][a-z0-9_]{2,30}$)
+W: 13:TestAnalyser.setUp: Reimport 'os' (imported line 10)
+C: 23:TestAnalyser.setUp: Comma not followed by a space
+        self.__allvisitors = ["172.0.0.1","172.0.0.2","172.0.0.1"]
+                                         ^^
+C: 31:TestAnalyser.tearDown: Invalid name "tearDown" (should match [a-z_][a-z0-9_]{2,30}$)
+W: 32:TestAnalyser.tearDown: Reimport 'os' (imported line 10)
+C: 35:TestAnalyser.createFile: Invalid name "createFile" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 35:TestAnalyser.createFile: Missing docstring
+C: 36:TestAnalyser.createFile: Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 37:TestAnalyser.createFile: Invalid name "r" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 42:TestAnalyser.testLoadFile: Invalid name "testLoadFile" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 42:TestAnalyser.testLoadFile: Missing docstring
+C: 45:TestAnalyser.testAppendRecord: Invalid name "testAppendRecord" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 45:TestAnalyser.testAppendRecord: Missing docstring
+C: 51:TestAnalyser.testUniqueVisitors: Invalid name "testUniqueVisitors" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 51:TestAnalyser.testUniqueVisitors: Missing docstring
+C: 57:TestAnalyser.testAllVisitors: Invalid name "testAllVisitors" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 57:TestAnalyser.testAllVisitors: Missing docstring
+C: 63:TestAnalyser.testVisitorsByResources: Invalid name "testVisitorsByResources" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 63:TestAnalyser.testVisitorsByResources: Missing docstring
+C: 67:TestAnalyser.testResourcesByCountries: Invalid name "testResourcesByCountries" (should match [a-z_][a-z0-9_]{2,30}$)
+C: 67:TestAnalyser.testResourcesByCountries: Missing docstring
+R: 10:TestAnalyser: Too many public methods (52/20)
+
+
+Report
+======
+52 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |1          |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |9      |9          |=          |22.22       |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+|function |0      |0          |=          |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |23     |23       |=          |
++-----------+-------+---------+-----------+
+|refactor   |1      |1        |=          |
++-----------+-------+---------+-----------+
+|warning    |4      |4        |=          |
++-----------+-------+---------+-----------+
+|error      |0      |0        |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------+------------+
+|message id |occurrences |
++===========+============+
+|C0103      |11          |
++-----------+------------+
+|C0111      |8           |
++-----------+------------+
+|C0301      |3           |
++-----------+------------+
+|W0404      |2           |
++-----------+------------+
+|W0301      |2           |
++-----------+------------+
+|R0904      |1           |
++-----------+------------+
+|F0401      |1           |
++-----------+------------+
+|C0324      |1           |
++-----------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at 4.62/10 (previous run: 4.62/10)
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |52     |86.67 |52       |=          |
++----------+-------+------+---------+-----------+
+|docstring |5      |8.33  |5        |=          |
++----------+-------+------+---------+-----------+
+|comment   |0      |0.00  |0        |=          |
++----------+-------+------+---------+-----------+
+|empty     |3      |5.00  |3        |=          |
++----------+-------+------+---------+-----------+
+
+
+
