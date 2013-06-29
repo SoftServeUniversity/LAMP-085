@@ -13,7 +13,7 @@ class SupportController < ApplicationController
   end
 
   def restore
-    flash[:info] = 'Restoring database was added to queue'
+    flash[:info] = 'Database was successfully restored'
     @file_name = params[:select_file]
     %x|FILE="#{@file_name}" rake db:restore|
     BackupNotifier.restore_email(current_user).deliver

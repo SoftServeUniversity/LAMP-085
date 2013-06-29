@@ -16,8 +16,8 @@ module HomeWorkChecker
         end
         true
       end
-      it 'should have exactly 2 items' do
-        @file_scan.instance_variable_get(:@files).should have(2).items 
+      it 'should have exactly 3 items' do
+        @file_scan.instance_variable_get(:@files).should have(3).items 
       end
       it 'should contain .zip/7z files only' do
         is_all_archives?.should_not be_false
@@ -31,7 +31,8 @@ module HomeWorkChecker
       it 'should yield correct data' do
         expect { |b| @file_scan.each(&b) }.to yield_successive_args(
           ["alejandra.camino_rb_accounting.manager", ".zip"],
-          ["christina.berglund_py_order.administrator", ".7z"]
+          ["christina.berglund_py_order.administrator", ".7z"],
+          ["daniel.tonini_py_sales.representative", ".7z"]
         )
       end
     end

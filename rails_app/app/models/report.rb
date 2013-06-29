@@ -1,6 +1,6 @@
 class Report < ActiveRecord::Base
-  ARCHIVE_PATH, RESULT_PATH = YAML.load_file('config/path.yml').values
-  LOG_PATH = Rails.root.to_s + '/log'
+  ARCHIVE_PATH, RESULT_PATH = YAML.load_file(Rails.root + 'config/path.yml').values
+  LOG_PATH = Rails.root + 'log'
   ARCHIVE_PASSED = ' have successfully processed'
   ARCHIVE_FAILED = ' have failed. Something went wrong'
   MONTHS_LIST = {
