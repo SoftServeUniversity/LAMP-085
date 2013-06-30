@@ -12,8 +12,9 @@ Auth::Application.routes.draw do
   end
 
   controller :statistic do
+    get 'statistic' => :index
     get 'statistic/language' => :language
-    get 'statistic/time' => :time
+    
   end
 
   controller :support do
@@ -24,9 +25,6 @@ Auth::Application.routes.draw do
   end
 
       
-      
-   
-
   # devise_for :users
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy' 
