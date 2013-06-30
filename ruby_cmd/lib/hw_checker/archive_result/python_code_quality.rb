@@ -22,7 +22,7 @@ module HomeWorkChecker
           next unless line.match(/^Your\scode\shas\sbeen\srated\sat/)
           rake = line.scan(/[\d\.]+/).shift.to_f
           if rake > 10
-            return (rake / 10).round(2)
+            return 0
           else
             return (rake * 10).round(2)
           end 
