@@ -3,11 +3,11 @@ class BackupNotifier < ActionMailer::Base
   
     def backup_email(user)
       @user = user
-      mail :to => @user.email, :subject => "Backup was createds"  
+      mail :to => @user['email'], :subject => "Backup was created"  
     end
 
     def restore_email(user)
       @user = user
-      mail :to => @user.email, :subject => "Databse was restored succesfuly"  
+      mail :to => @user['email'], :subject => "Databse was restored succesfuly"  
     end
 end

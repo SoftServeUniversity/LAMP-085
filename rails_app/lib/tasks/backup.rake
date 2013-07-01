@@ -2,6 +2,7 @@ require 'fileutils'
 
 namespace :db do  desc "Backup project database. Options: DIR=backups Rails.env=production MAX=4" 
   task :backup => [:environment] do
+    MAX_NUM = 4
     datestamp = Time.now.strftime("%Y-%m-%d_%H-%M-%S")    
     base_path = Rails.root
     base_path = File.join(base_path, ENV["DIR"] || "backups")
@@ -18,7 +19,7 @@ namespace :db do  desc "Backup project database. Options: DIR=backups Rails.env=
     dir = Dir.new(backup_base)
     all_backups = dir.entries.sort[2..-1].reverse
     puts "Created backup: #{backup_file}"     
-    max_backups = (ENV["MAX"].to_i if ENV["MAX"].to_i > 0) || 4
+    max_backups = (ENV["MAX"].to_i if ENV["MAX"].to_i > 0) || MAX_NUM
     unwanted_backups = all_backups[max_backups..-1] || []
       for unwanted_backup in unwanted_backups
         FileUtils.rm_rf(File.join(backup_base, unwanted_backup))

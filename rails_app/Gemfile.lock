@@ -54,6 +54,7 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.2.4)
+    dotenv (0.8.0)
     email_spec (1.4.0)
       launchy (~> 2.1)
       mail (~> 2.2)
@@ -65,6 +66,9 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -240,6 +244,7 @@ DEPENDENCIES
   devise
   email_spec
   factory_girl_rails
+  foreman
   haml-rails
   highcharts-rails
   hw_checker (~> 1.4.10)

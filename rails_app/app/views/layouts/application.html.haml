@@ -45,9 +45,9 @@
             %ul.nav.nav-list
               %li.nav-header Main Menu
               %li= link_to 'Results Overview', reports_path
-              %li= link_to 'Queue of Archives', resque_server_path
+              %li= link_to "Queue's Page", resque_server_path
+              %li= link_to 'General Statistic', statistic_path
               %li= link_to 'Language Statistic', statistic_language_path
-              %li= link_to 'Time Statistic', statistic_time_path
               %li= link_to 'Logger', logger_path
               %li= link_to 'Restore Database', support_database_restore_path
         .span9

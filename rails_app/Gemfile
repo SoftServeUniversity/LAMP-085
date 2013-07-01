@@ -63,6 +63,9 @@ gem 'will_paginate'
 # To provide nginx server
 gem 'passenger'
 
+# To manage redis/resque jobs easy
+gem 'foreman'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
