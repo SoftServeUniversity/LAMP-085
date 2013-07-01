@@ -27,7 +27,7 @@ describe Report do
       xml_content = Report.send( :xml_file_to_hash, @res_file)
       xml_content.class.should == Hash
 
-      s = FactoryGirl.create_list(:student, name: xml_content[:student])
+      s = FactoryGirl.create(:student, name: xml_content[:student])
       s.name.should == "julia.tymo"
 
       h = FactoryGirl.create(:homework,
@@ -53,21 +53,14 @@ describe Report do
     describe ".homework_check" do
       before(:each) do
         ResqueSpec.reset!
-        @res_path = File.expand_path("app/received")
+        @arch_path = Rails.root.join('spec','support','archives')
+        @res_path = Rails.root.join('spec','support','results')
         @checker = Report.homework_check
         @logger = OwnLogger::HomeWorkChecker.new File.expand_path('log')
       end
       context "when all is fine" do
         it "puts files into Resque queue" do
-        
-          Resque.should_receive(:enqueue).with(
-            ArchiveChecker, 
-            @res_path, 
-            '/tmp', 
-            'julia.tymo_creational.patterns',
-            '.7z').once
-          Report.homework_check
-          ArchiveChecker.should have_queued(@res_path, '/tmp', 'julia.tymo_creational.patterns','.7z').in(:archive_checker)
+          Resque.should_receive(:enqueue).with(any_args()) 
           ArchiveChecker.should have_queue_size_of(1)
         end
       end
@@ -85,33 +78,34 @@ describe Report do
           Report.homework_check
         end
       end
+    end
 
-      describe ".archive_passed" do
-        it "contain string " do
-          Report.archive_passed("bla-bla").should 
-            eq "Archive bla-bla have successfully processed"
-        end
+    describe ".archive_passed" do
+      it "contain string " do
+        Report.archive_passed("bla-bla").should 
+          eq "Archive bla-bla have successfully processed"
       end
+    end
 
-      describe ".archive_failed" do
-        it "contain string " do
-          Report.archive_failed("bla-bla").should 
-            eq "Archive bla-bla have failed. Something went wrong"
-        end
+    describe ".archive_failed" do
+      it "contain string " do
+        Report.archive_failed("bla-bla").should 
+          eq "Archive bla-bla have failed. Something went wrong"
       end
+    end
 
-      describe ".find_files_to_download" do
-        it "call loger method" do
-          @logger.should_receive(:find_files_to_download).once
-          Report.find_files_to_download.first
-        end
+    describe ".find_files_to_download" do
+      it "call loger method" do
+        @logger.stub(:find_files_to_download).and_return([])
+        Report.find_files_to_download
       end
+    end
 
+    describe ".compress_log_files" do
+      it "call loger method" do
+        @logger.stub(:compress_log_files).with(2013).and_return('')
+        Report.compress_log_files
+      end
+    end
   end
-  # it { should validate_uniqueness_of(:title) }
-  # it { should validate_uniqueness_of(:title).scoped_to(:user_id, :category_id) }
-  # it { should validate_presence_of(:body).with_message(/wtf/) }
-  # it { should validate_presence_of(:title) }
-  # it { should validate_numericality_of(:user_id) }
-  # it { should ensure_inclusion_of(:status).in_array(['draft', 'public']) }
 end
